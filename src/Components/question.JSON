@@ -1,0 +1,300 @@
+[
+    {
+        "testId": "1",
+        "testName": "SDQ-CAS",
+        "questions": [
+            {
+                "statement": "Tiene en cuenta los sentimientos de otras personas",
+                "options": [
+                    "No es cierto",
+                    "Un tanto cierto",
+                    "Absolutamente cierto"
+                ],
+                "points": [
+                    0,
+                    1,
+                    2
+                ],
+                "reversePoints": false
+            },
+            {
+                "statement": "Es inquieto/a, hiperactivo/a, no puede permanecer quieto/a por mucho tiempo",
+                "options": [
+                    "No es cierto",
+                    "Un tanto cierto",
+                    "Absolutamente cierto"
+                ],
+                "points": [
+                    0,
+                    1,
+                    2
+                ],
+                "reversePoints": false
+            },
+            {
+                "statement": "Se queja con frecuencia de dolor de cabeza, de estómago o de náuseas",
+                "options": [
+                    "No es cierto",
+                    "Un tanto cierto",
+                    "Absolutamente cierto"
+                ],
+                "points": [
+                    0,
+                    1,
+                    2
+                ],
+                "reversePoints": false
+            },
+            {
+                "statement": "Comparte frecuentemente con otros niños/as chucherías, juguetes, lápices, etc",
+                "options": [
+                    "No es cierto",
+                    "Un tanto cierto",
+                    "Absolutamente cierto"
+                ],
+                "points": [
+                    0,
+                    1,
+                    2
+                ],
+                "reversePoints": false
+            },
+            {
+                "statement": "Frecuentemente tiene rabietas o mal genio",
+                "options": [
+                    "No es cierto",
+                    "Un tanto cierto",
+                    "Absolutamente cierto"
+                ],
+                "points": [
+                    0,
+                    1,
+                    2
+                ],
+                "reversePoints": false
+            },
+            {
+                "statement": "Es más bien solitario/a y tiende a jugar solo/a",
+                "options": [
+                    "No es cierto",
+                    "Un tanto cierto",
+                    "Absolutamente cierto"
+                ],
+                "points": [
+                    0,
+                    1,
+                    2
+                ],
+                "reversePoints": false
+            },
+            {
+                "statement": "Tiene muchas preocupaciones, a menudo parece inquieto/a o preocupado/a",
+                "options": [
+                    "No es cierto",
+                    "Un tanto cierto",
+                    "Absolutamente cierto"
+                ],
+                "points": [
+                    0,
+                    1,
+                    2
+                ],
+                "reversePoints": false
+            },
+            {
+                "statement": "Ofrece ayuda cuando alguien resulta herido, disgustado, o enfermo",
+                "options": [
+                    "No es cierto",
+                    "Un tanto cierto",
+                    "Absolutamente cierto"
+                ],
+                "points": [
+                    0,
+                    1,
+                    2
+                ],
+                "reversePoints": false
+            },
+            {
+                "statement": "Está continuamente moviéndose y es revoltoso",
+                "options": [
+                    "No es cierto",
+                    "Un tanto cierto",
+                    "Absolutamente cierto"
+                ],
+                "points": [
+                    0,
+                    1,
+                    2
+                ],
+                "reversePoints": false
+            },
+            {
+                "statement": "Pelea con frecuencia con otros niños/as o se mete con ellos/ellas",
+                "options": [
+                    "No es cierto",
+                    "Un tanto cierto",
+                    "Absolutamente cierto"
+                ],
+                "points": [
+                    0,
+                    1,
+                    2
+                ],
+                "reversePoints": false
+            },
+            {
+                "statement": "Se siente a menudo infeliz, desanimado o lloroso",
+                "options": [
+                    "No es cierto",
+                    "Un tanto cierto",
+                    "Absolutamente cierto"
+                ],
+                "points": [
+                    0,
+                    1,
+                    2
+                ],
+                "reversePoints": false
+            },
+            {
+                "statement": "Se distrae con facilidad, su concentración tiende a dispersarse",
+                "options": [
+                    "No es cierto",
+                    "Un tanto cierto",
+                    "Absolutamente cierto"
+                ],
+                "points": [
+                    0,
+                    1,
+                    2
+                ],
+                "reversePoints": false
+            },
+            {
+                "statement": "Es nervioso/a o dependiente ante nuevas situaciones, fácilmente pierde la confianza en sí mismo/a",
+                "options": [
+                    "No es cierto",
+                    "Un tanto cierto",
+                    "Absolutamente cierto"
+                ],
+                "points": [
+                    0,
+                    1,
+                    2
+                ],
+                "reversePoints": false
+            },
+            {
+                "statement": "Trata bien a los niños/as más pequeños/as",
+                "options": [
+                    "No es cierto",
+                    "Un tanto cierto",
+                    "Absolutamente cierto"
+                ],
+                "points": [
+                    0,
+                    1,
+                    2
+                ],
+                "reversePoints": false
+            },
+            {
+                "statement": "Muestra a menudo una actitud negativa con los adultos",
+                "options": [
+                    "No es cierto",
+                    "Un tanto cierto",
+                    "Absolutamente cierto"
+                ],
+                "points": [
+                    0,
+                    1,
+                    2
+                ],
+                "reversePoints": false
+            },
+            {
+                "statement": "Los otros niños/as se meten con él/ella o se burlan de él/ella",
+                "options": [
+                    "No es cierto",
+                    "Un tanto cierto",
+                    "Absolutamente cierto"
+                ],
+                "points": [
+                    0,
+                    1,
+                    2
+                ],
+                "reversePoints": false
+            },
+            {
+                "statement": "A menudo se ofrece para ayudar (a padres, maestros, otros niños/as)",
+                "options": [
+                    "No es cierto",
+                    "Un tanto cierto",
+                    "Absolutamente cierto"
+                ],
+                "points": [
+                    0,
+                    1,
+                    2
+                ],
+                "reversePoints": false
+            },
+            {
+                "statement": "A menudo muestra rencor cuando se enfada",
+                "options": [
+                    "No es cierto",
+                    "Un tanto cierto",
+                    "Absolutamente cierto"
+                ],
+                "points": [
+                    0,
+                    1,
+                    2
+                ],
+                "reversePoints": false
+            },
+            {
+                "statement": "Se lleva mejor con adultos que con otros niños/as",
+                "options": [
+                    "No es cierto",
+                    "Un tanto cierto",
+                    "Absolutamente cierto"
+                ],
+                "points": [
+                    0,
+                    1,
+                    2
+                ],
+                "reversePoints": false
+            },
+            {
+                "statement": "Tiene muchos miedos, se asusta fácilmente",
+                "options": [
+                    "No es cierto",
+                    "Un tanto cierto",
+                    "Absolutamente cierto"
+                ],
+                "points": [
+                    0,
+                    1,
+                    2
+                ],
+                "reversePoints": false
+            }
+        ]
+    },
+    {
+      "testId": "2",
+      "testName": "Prueba de Ansiedad",
+      "questions": [
+        {
+          "statement": "Me siento ansioso",
+          "options": ["No es cierto", "Un tanto cierto", "Actualmente cierto"],
+          "points": [0, 1, 2]
+        }
+      ]
+    }
+  ]
+  
