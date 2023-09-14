@@ -2,6 +2,7 @@ export const questionsData = [
     {
         "testId": "1",
         "testName": "SDQ-CAS",
+        "instructions": "",
         "questions": [
             {
                 "statement": "Tiene en cuenta los sentimientos de otras personas",
@@ -386,6 +387,7 @@ export const questionsData = [
     {
         "testId": "2", 
         "testName": "Inventario de Depresión de Beck II", 
+        "instructions": "",
         "questions": 
         [
             {
@@ -612,6 +614,245 @@ export const questionsData = [
 
                 "points": [0, 1, 2, 3]
             },
+        ]
+    },
+    {
+        "testId": "3", 
+        "testName": "BAI", 
+        "instructions": "",
+        "questions": 
+        [
+            {
+                "statement": "Hormigueo o cosquilleos", 
+
+                "options": [
+                    "Nada", 
+                    "Poco", 
+                    "Regular", 
+                    "Mucho"], 
+
+                "points": [0, 1, 2, 3]
+            },
+            {
+                "statement": "Calor", 
+
+                "options": [
+                    "Nada", 
+                    "Poco", 
+                    "Regular", 
+                    "Mucho"], 
+
+                "points": [0, 1, 2, 3]
+            },
+            {
+                "statement": "Piernas débiles", 
+
+                "options": [
+                    "Nada", 
+                    "Poco", 
+                    "Regular", 
+                    "Mucho"], 
+
+                "points": [0, 1, 2, 3]
+            },
+            {
+                "statement": "Incapaz de relajarme", 
+
+                "options": [
+                    "Nada", 
+                    "Poco", 
+                    "Regular", 
+                    "Mucho"], 
+
+                "points": [0, 1, 2, 3]
+            },
+            {
+                "statement": "Temor de que lo peor sucederá", 
+
+                "options": [
+                    "Nada", 
+                    "Poco", 
+                    "Regular", 
+                    "Mucho"], 
+
+                "points": [0, 1, 2, 3]
+            },
+            {
+                "statement": "Mareos", 
+
+                "options": [
+                    "Nada", 
+                    "Poco", 
+                    "Regular", 
+                    "Mucho"], 
+
+                "points": [0, 1, 2, 3]
+            },
+            {
+                "statement": "Palpitaciones o taquicardia", 
+
+                "options": [
+                    "Nada", 
+                    "Poco", 
+                    "Regular", 
+                    "Mucho"], 
+
+                "points": [0, 1, 2, 3]
+            },
+            {
+                "statement": "Inestabilidad o pérdida del equilibrio", 
+
+                "options": [
+                    "Nada", 
+                    "Poco", 
+                    "Regular", 
+                    "Mucho"], 
+
+                "points": [0, 1, 2, 3]
+            },
+            {
+                "statement": "Miedo", 
+
+                "options": [
+                    "Nada", 
+                    "Poco", 
+                    "Regular", 
+                    "Mucho"], 
+
+                "points": [0, 1, 2, 3]
+            },
+            {
+                "statement": "Nerviosismo", 
+
+                "options": [
+                    "Nada", 
+                    "Poco", 
+                    "Regular", 
+                    "Mucho"], 
+
+                "points": [0, 1, 2, 3]
+            },
+            {
+                "statement": "Sensación de ahogo", 
+
+                "options": [
+                    "Nada", 
+                    "Poco", 
+                    "Regular", 
+                    "Mucho"], 
+
+                "points": [0, 1, 2, 3]
+            },
+            {
+                "statement": "Temblor de manos", 
+
+                "options": [
+                    "Nada", 
+                    "Poco", 
+                    "Regular", 
+                    "Mucho"], 
+
+                "points": [0, 1, 2, 3]
+            },
+            {
+                "statement": "Escalofríos", 
+
+                "options": [
+                    "Nada", 
+                    "Poco", 
+                    "Regular", 
+                    "Mucho"], 
+
+                "points": [0, 1, 2, 3]
+            },
+            {
+                "statement": "Temor de perder el control", 
+
+                "options": [
+                    "Nada", 
+                    "Poco", 
+                    "Regular", 
+                    "Mucho"], 
+
+                "points": [0, 1, 2, 3]
+            },
+            {
+                "statement": "Dificultad para respirar", 
+
+                "options": [
+                    "Nada", 
+                    "Poco", 
+                    "Regular", 
+                    "Mucho"], 
+
+                "points": [0, 1, 2, 3]
+            },
+            {
+                "statement": "Temor a morir", 
+
+                "options": [
+                    "Nada", 
+                    "Poco", 
+                    "Regular", 
+                    "Mucho"], 
+
+                "points": [0, 1, 2, 3]
+            },
+            {
+                "statement": "Sentirme asustado", 
+
+                "options": [
+                    "Nada", 
+                    "Poco", 
+                    "Regular", 
+                    "Mucho"], 
+
+                "points": [0, 1, 2, 3]
+            },
+            {
+                "statement": "Molestias estomacales", 
+
+                "options": [
+                    "Nada", 
+                    "Poco", 
+                    "Regular", 
+                    "Mucho"], 
+
+                "points": [0, 1, 2, 3]
+            },
+            {
+                "statement": "Desmayos", 
+
+                "options": [
+                    "Nada", 
+                    "Poco", 
+                    "Regular", 
+                    "Mucho"], 
+
+                "points": [0, 1, 2, 3]
+            },
+            {
+                "statement": "Rubor (enrojecimiento) en cara", 
+
+                "options": [
+                    "Nada", 
+                    "Poco", 
+                    "Regular", 
+                    "Mucho"], 
+
+                "points": [0, 1, 2, 3]
+            },
+            {
+                "statement": "Más sudor de lo usual", 
+
+                "options": [
+                    "Nada", 
+                    "Poco", 
+                    "Regular", 
+                    "Mucho"], 
+
+                "points": [0, 1, 2, 3]
+            }  
         ]
     }
 ]
