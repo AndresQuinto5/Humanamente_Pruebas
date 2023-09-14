@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Question from './Components/Question';
 import { questionsData } from './Components/questions.js';
+import { ResultsProvider } from './Components/ResultsContext';
+import { useResults } from './Components/ResultsContext';
+
 
 function App() {
+  const { results, addResult } = useResults(); // Obtener el estado y las funciones desde el contexto
+  const [currentTestId, setCurrentTestId] = useState("1");  // Cambia esto para cargar una prueba diferente
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [questions, setQuestions] = useState([]);
   const [scores, setScores] = useState([]);
@@ -10,7 +15,7 @@ function App() {
   const [finished, setFinished] = useState(false);
 
   useEffect(() => {
-    const test = questionsData.find(test => test.testId === "1");
+    const test = questionsData.find(test => test.testId === currentTestId);
 
     if (test) {
       setQuestions(test.questions);
@@ -20,37 +25,50 @@ function App() {
       console.error('Test no encontrado');
       setLoading(false);
     }
-  }, []);
+  }, [currentTestId]);
 
+  useEffect(() => {
+    if (finished) {
+      const totalScore = calculateTotalScore();
+      addResult(currentTestId, totalScore);  // Usar addResult para actualizar el estado global
+      alert(`Prueba completada. Tu puntuación total es ${JSON.stringify(totalScore)}`);
+      resetTest();
+    }
+  }, [finished]);
+
+  useEffect(() => {
+    console.log("Resultados globales actualizados:", results);
+  }, [results]);
+  
   const handleAnswerClick = (score) => {
     const newScores = [...scores];
     newScores[currentQuestion] = score;
     setScores(newScores);
 
+    console.log(`ID del ítem: ${currentQuestion}, Valor de la respuesta: ${score}`);
+
     if (currentQuestion === questions.length - 1) {
       setFinished(true);
-      const scoresByCategory = calculateScoresByCategory();
-      alert(`Prueba completada. Tus puntuaciones por categoría son: ${JSON.stringify(scoresByCategory)}`);
-      resetTest();
     } else {
       goToNextQuestion();
     }
   };
 
-  const calculateScoresByCategory = () => {
-    const scoresByCategory = {};
-
-    questions.forEach((question, index) => {
-      const category = question.category;
-      const score = scores[index];
-
-      if (!scoresByCategory[category]) {
-        scoresByCategory[category] = 0;
-      }
-      scoresByCategory[category] += score;
-    });
-
-    return scoresByCategory;
+  const calculateTotalScore = () => {
+    if (currentTestId === "1") {
+      const scoresByCategory = {};
+      questions.forEach((question, index) => {
+        const category = question.category;
+        const score = scores[index];
+        if (!scoresByCategory[category]) {
+          scoresByCategory[category] = 0;
+        }
+        scoresByCategory[category] += score;
+      });
+      return scoresByCategory;
+    } else if (currentTestId === "2") {
+      return scores.reduce((a, b) => a + b, 0);
+    }
   };
 
   const goToNextQuestion = () => {
