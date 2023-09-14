@@ -854,5 +854,352 @@ export const questionsData = [
                 "points": [0, 1, 2, 3]
             }  
         ]
+    },
+    {
+        "testId": "4", 
+        "testName": "Tamizaje de probioticos", 
+        "instructions": "",
+        "questions": 
+        [
+            {
+                "statement": "¿Ha tomado antibíoticos en el último año?", 
+
+                "options": [
+                    "Verdadero", 
+                    "Falso"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Tiene problemas digestivos (diarrea, estreñimiento, gases)?", 
+
+                "options": [
+                    "Verdadero", 
+                    "Falso"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Ha sufrido de intoxicación alimenticia?", 
+
+                "options": [
+                    "Verdadero", 
+                    "Falso"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Sufre de fatiga crónica?", 
+
+                "options": [
+                    "Verdadero", 
+                    "Falso"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Tiende a tener la piel seca?", 
+
+                "options": [
+                    "Verdadero", 
+                    "Falso"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Se siente deprimido o ansioso con frecuencia?", 
+
+                "options": [
+                    "Verdadero", 
+                    "Falso"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Sufre de asma o alergias?", 
+
+                "options": [
+                    "Verdadero", 
+                    "Falso"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Se enferma con frecuencia?", 
+
+                "options": [
+                    "Verdadero", 
+                    "Falso"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Ha tenido infecciones por hongos?", 
+
+                "options": [
+                    "Verdadero", 
+                    "Falso"],
+
+                "points": [1,0]
+            },
+        ]
+    },
+    {
+        "testId": "5", 
+        "testName": "Cuestionario de adherencia a la dieta mediterranea", 
+        "instructions": "",
+        "questions": 
+        [
+            {
+                "statement": "¿Usa usted el aceite de oliva como principal grasa para cocinar?", 
+
+                "options": [
+                    "Sí", 
+                    "No"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Cuánto aceite de oliva consume en total al día (incluyendo el usado para freír, comidas fuera de casa, ensaladas, etc.)?", 
+
+                "options": [
+                    "2 o más cucharadas", 
+                    "Menos de 2"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Cuántas raciones de verdura u hortalizas consume al día? (las guarniciones o acompañamientos = ½ ración)", 
+
+                "options": [
+                    "2 o más al dia (al menos una de ellas en ensaladas o crudas)", 
+                    "Menos de 2"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Cuantas piezas de fruta (incluyendo zumo natural) consume al día?", 
+
+                "options": [
+                    "3 o más al dia", 
+                    "Menos de 3"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Cuantas raciones de carnes rojas, hamburguesas, salchichas o embutidos consume al día? (ración: 100 - 150 g)", 
+
+                "options": [
+                    "Menos de una al día", 
+                    "Menos de 1"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Cuantas raciones de mantequilla, margarina o nata consume al día? (porción individual: 12 g)", 
+
+                "options": [
+                    "Menos de una al día", 
+                    "Más de 1 al dia"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Cuantas bebidas carbonatadas y/o azucaradas (refrescos, colas, tónicas, bitter) consume al día? (porción individual: 12 g)", 
+
+                "options": [
+                    "Menos de una al día", 
+                    "Más de 1 al dia"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Bebe usted vino? ¿Cuánto consume a la semana? (porción individual: 12 g)", 
+
+                "options": [
+                    "3 o más vasos por semana", 
+                    "Menos de 3"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Cuantas raciones de legumbres consume a la semana? (1 plato o ración equivale a 150 g)", 
+
+                "options": [
+                    "3 o más por semana", 
+                    "Menos de 3"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Cuantas raciones de pescado-mariscos consume a la semana? (1 plato pieza o ración: 100 - 150 de pescado o 4-5 piezas o 200 g de marisco)", 
+
+                "options": [
+                    "3 o más por semana", 
+                    "Menos de 3"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Cuantas veces consume reposteria comercial (no casera) como galletas, flanes, dulce o pasteles a la semana?", 
+
+                "options": [
+                    "Menos de 3 por semana", 
+                    "Más de 3"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Cuantas veces consume frutos secos a la semana? (ración 30 g)", 
+
+                "options": [
+                    "Una o más por semana", 
+                    "No consumo"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Consume preferentemente carne de pollo, pavo o conejo en vez de ternera, cerdo, hamburguesas o salchichas? (ración 30 g)", 
+
+                "options": [
+                    "Sí", 
+                    "No"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Cuantas veces a la semana consume los vegetales cocinados, la pasta, arroz u otros platos aderezados con salsa de tomate, ajo, cebolla o puerro elaborada a fuego lento con aceite de oliva (sofrito)?", 
+
+                "options": [
+                    "2 o más al por semana", 
+                    "Menos de 2"],
+
+                "points": [1,0]
+            }
+        ]
+    },
+    {
+        "testId": "6", 
+        "testName": "Tamizaje vitamina D", 
+        "instructions": "",
+        "questions": 
+        [
+            {
+                "statement": "¿Se ha fracturado un hueso sin haberse caído?", 
+
+                "options": [
+                    "Verdadero", 
+                    "Falso"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Sus músculos están flojos a pesar de hacer ejercicio?", 
+
+                "options": [
+                    "Verdadero", 
+                    "Falso"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Sufre de dolor crónico que no se alivia con medicamentos?", 
+
+                "options": [
+                    "Verdadero", 
+                    "Falso"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Sufre de cansancio?", 
+
+                "options": [
+                    "Verdadero", 
+                    "Falso"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Tiende a estar triste?", 
+
+                "options": [
+                    "Verdadero", 
+                    "Falso"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Toma antidrepresivos, esteroides anticoagulantes?", 
+
+                "options": [
+                    "Verdadero", 
+                    "Falso"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Con frecuencia nota sus encías muy rojas e inflamadas?", 
+
+                "options": [
+                    "Verdadero", 
+                    "Falso"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Se enferma de gripe con frecuencia?", 
+
+                "options": [
+                    "Verdadero", 
+                    "Falso"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Ha aumentado de peso sin comer más calorías?", 
+
+                "options": [
+                    "Verdadero", 
+                    "Falso"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Su piel es muy oscura todo el año?", 
+
+                "options": [
+                    "Verdadero", 
+                    "Falso"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Tiene problemas digestivos?", 
+
+                "options": [
+                    "Verdadero", 
+                    "Falso"],
+
+                "points": [1,0]
+            },
+            {
+                "statement": "¿Le cuesta controlar su presión alta, pese a medicarse?", 
+
+                "options": [
+                    "Verdadero", 
+                    "Falso"],
+
+                "points": [1,0]
+            },
+        ]
+    },
+    {
+        "testId": "7", 
+        "testName": "BAI", 
+        "instructions": "",
+        "questions": 
+        [
+        ]
     }
 ]

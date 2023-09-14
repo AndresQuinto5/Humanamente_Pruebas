@@ -7,7 +7,7 @@ import { useResults } from './Components/ResultsContext';
 
 function App() {
   const { results, addResult } = useResults(); // Obtener el estado y las funciones desde el contexto
-  const [currentTestId, setCurrentTestId] = useState("1");  // Cambia esto para cargar una prueba diferente
+  const [currentTestId, setCurrentTestId] = useState("5");  // Cambia esto para cargar una prueba diferente
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [questions, setQuestions] = useState([]);
   const [scores, setScores] = useState([]);
@@ -68,6 +68,15 @@ function App() {
       return scoresByCategory;
     } else if (currentTestId === "2") {
       return scores.reduce((a, b) => a + b, 0);
+    }else if (currentTestId === "3") {
+      return scores.reduce((a, b) => a + b, 0);
+    }else if (currentTestId === "4") { 
+      return scores.reduce((a, b) => a + b, 0); 
+    }else if (currentTestId === "5") {
+      return scores.reduce((a, b) => a + b, 0); 
+    }
+    else if (currentTestId === "6") {
+      return scores.reduce((a, b) => a + b, 0); 
     }
   };
 
