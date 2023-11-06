@@ -1191,7 +1191,7 @@ export const questionsData = [
                     "Falso"],
 
                 "points": [1,0]
-            },
+            }
         ]
     },
     // {

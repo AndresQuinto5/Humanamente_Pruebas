@@ -1,27 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import Question from './Components/Question';
 import { questionsData } from './Components/questions.js';
-import { ResultsProvider } from './Components/ResultsContext';
 import { useResults } from './Components/ResultsContext';
+import calculateTotalScore from './utils/ScoreCalculator';
 
-//1. SDQ-CAS
-//2. BECK II
-//3. BAI
-//4. PROBIOTICOS TAMIZAJE
-//5. ADHERENCIA MEDITERRANEO
-//6. VITAMINA D
-//8. ESCALA DE DESESPERANZA DE BECK
-//9. Cuestionario Salamanca de Trastornos de la Personalidad 
+
 function App() {
-  const { results, addResult } = useResults(); // Obtener el estado y las funciones desde el contexto
-  const [currentTestId, setCurrentTestId] = useState("8");  // Cambia esto para cargar una prueba diferente
+  const { results, addResult } = useResults(); 
+  const [currentTestId, setCurrentTestId] = useState("1");  
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [questions, setQuestions] = useState([]);
   const [scores, setScores] = useState([]);
   const [loading, setLoading] = useState(true);
   const [finished, setFinished] = useState(false);
-
   const isTestCompleted = (testId) => testId in results;
+  const [alertShown, setAlertShown] = useState(false);
 
   useEffect(() => {
     if (currentTestId) {
@@ -31,182 +24,115 @@ function App() {
         setQuestions(test.questions);
         setScores(Array(test.questions.length).fill(null));
       } else {
-        console.error('Test no encontrado: ' + currentTestId);
-        alert('Test no encontrado: ' + currentTestId); // Mostrar alerta al usuario
-        setCurrentTestId(null); // Resetear el testId actual
+        alert('Test no encontrado: ' + currentTestId);
+        setCurrentTestId(null);
       }
       setLoading(false);
     }
   }, [currentTestId]);
 
   useEffect(() => {
-    const test = questionsData.find(test => test.testId === currentTestId);
-
-    if (test) {
-      setQuestions(test.questions);
-      setScores(Array(test.questions.length).fill(null));
-      setLoading(false);
-    } else {
-      console.error('Test no encontrado');
-      setLoading(false);
-    }
-  }, [currentTestId]);
-
-  useEffect(() => {
-    if (finished) {
-      const totalScore = calculateTotalScore();
-      addResult(currentTestId, totalScore);  // Usar addResult para actualizar el estado global
+    if (finished && !alertShown) {
+      const totalScore = calculateTotalScore(currentTestId, scores, questions);
+      addResult(currentTestId, totalScore); 
       alert(`Prueba completada. Tu puntuación total es ${JSON.stringify(totalScore)}`);
-      resetTest();
+      setAlertShown(true); // Asegúrate de que el alert se muestra solo una vez
     }
-  }, [finished]);
+  }, [finished, currentTestId, scores, questions, addResult, alertShown]);
+  // Este useEffect se asegurará de que cada vez que results se actualice, se imprima el estado actualizado
+  useEffect(() => {
+    console.log('Todos los resultados hasta ahora:', results);
+  }, [results]);
+
+  const handleAnswerClick = (score) => {
+    setScores((prevScores) => {
+      const newScores = [...prevScores];
+      newScores[currentQuestion] = score;
+      return newScores;
+    });
+  
+    // Si no es la última pregunta, avanza a la siguiente
+    if (currentQuestion < questions.length - 1) {
+      setCurrentQuestion(currentQuestion + 1);
+    } else {
+      // Si es la última pregunta, termina el test después de actualizar las puntuaciones
+      setFinished(true); // Esto debería disparar el useEffect que finaliza el test
+    }
+  };
+  
+
+  const renderTestButtons = () => (
+    questionsData.map((test) => (
+      <button
+        key={test.testId}
+        disabled={isTestCompleted(test.testId)}
+        onClick={() => setCurrentTestId(test.testId)}
+      >
+        {test.testName || 'Nombre no definido'} {isTestCompleted(test.testId) ? '✓' : ''}
+      </button>
+    ))
+  );
+
+  const goToNextTest = () => {
+    const currentIndex = questionsData.findIndex((test) => test.testId === currentTestId);
+    const nextIndex = currentIndex + 1;
+    
+    if (nextIndex < questionsData.length) {
+      const nextTestId = questionsData[nextIndex].testId;
+      setCurrentTestId(nextTestId);
+      setCurrentQuestion(0);
+      setScores(Array(questionsData[nextIndex].questions.length).fill(null));
+      // No es necesario cambiar 'finished' ni 'alertShown' aquí
+    } else {
+      console.log("No hay más pruebas disponibles.");
+      setCurrentTestId(null); // Puedes establecer un estado para mostrar un mensaje final si lo deseas
+    }
+  };
+
+  const handleFinishTest = () => {
+    const totalScore = calculateTotalScore(currentTestId, scores, questions);
+    addResult(currentTestId, totalScore);
+    goToNextTest(); 
+    setAlertShown(false); // Reset the alert shown state
+  };
 
   useEffect(() => {
-    console.log("Resultados globales actualizados:", results);
-  }, [results]);
-  
-  const handleAnswerClick = (score) => {
-    const newScores = [...scores];
-    newScores[currentQuestion] = score;
-    setScores(newScores);
-
-    console.log(`ID del ítem: ${currentQuestion}, Valor de la respuesta: ${score}`);
-
-    if (currentQuestion === questions.length - 1) {
-      setFinished(true);
-    } else {
-      goToNextQuestion();
+    // If finished is true, then complete the test and reset finished state
+    if (finished) {
+      handleFinishTest();
+      setFinished(false); // Reset finished state for the new test
     }
-  };
-
-  const calculateTotalScore = () => {
-    if (currentTestId === "1") { 
-      const scoresByCategory = {};
+  }, [finished]); // Effect for handling completion of a test
+  
+  useEffect(() => {
+    if (scores.some(score => score !== null)) { // Verificar si hay al menos una respuesta
+      console.log(`Respuestas para la prueba ${currentTestId}:`);
       questions.forEach((question, index) => {
-        const category = question.category;
-        const score = scores[index];
-        if (!scoresByCategory[category]) {
-          scoresByCategory[category] = 0;
-        }
-        scoresByCategory[category] += score;
+        console.log(`Pregunta ${index + 1}: ${question.statement}, Respuesta: ${scores[index]}`);
       });
-      return scoresByCategory;
-    } 
-    else if (currentTestId === "2") {
-      return scores.reduce((a, b) => a + b, 0);
     }
-    else if (currentTestId === "3") {
-      return scores.reduce((a, b) => a + b, 0);
-    }
-    else if (currentTestId === "4") { 
-      return scores.reduce((a, b) => a + b, 0); 
-    }
-    else if (currentTestId === "5") {
-      return scores.reduce((a, b) => a + b, 0); 
-    }
-    else if (currentTestId === "6") {
-      return scores.reduce((a, b) => a + b, 0); 
-    }
-    else if (currentTestId === "8") {
-      const scoreIndexes = {
-        afectivo: [0, 5, 12, 14, 18], // ítems 1, 6, 13, 15, 19 (indice empieza en 0)
-        motivacional: [1, 2, 8, 10, 11, 15, 16, 19], // ítems 2, 3, 9, 11, 12, 16, 17, 20
-        cognitivo: [3, 6, 7, 13, 17], // ítems 4, 7, 8, 14, 18
-      };
-  
-      const factorScores = {
-        afectivo: scoreIndexes.afectivo.reduce((acc, index) => acc + scores[index], 0),
-        motivacional: scoreIndexes.motivacional.reduce((acc, index) => acc + scores[index], 0),
-        cognitivo: scoreIndexes.cognitivo.reduce((acc, index) => acc + scores[index], 0),
-      };
-  
-      const totalScore = scores.reduce((a, b) => a + b, 0);
-  
-      return {
-        totalScore,
-        ...factorScores
-      };
-    }
-    else if (currentTestId === "9") {
-      // Ítems correspondientes a cada subescala
-      const groupAIndexes = [0, 1, 2, 3, 4, 5]; // PAR, ESQ, EQT
-      const groupBIndexes = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15]; // HIST, ANT, NAR, IE IMP, IE LIM
-      const groupCIndexes = [16, 17, 18, 19, 20, 21]; // ANAN, DEP, ANS
-    
-      // Calcula los puntajes por grupo
-      const groupAScores = groupAIndexes.map(index => scores[index] || 0); // Añade || 0 para manejar undefined/null
-      const groupBScores = groupBIndexes.map(index => scores[index] || 0);
-      const groupCScores = groupCIndexes.map(index => scores[index] || 0);
-    
-      // Retorna los resultados por subescala
-      return {
-        PAR: groupAScores[0] + groupAScores[1],
-        ESQ: groupAScores[2] + groupAScores[3],
-        EQT: groupAScores[4] + groupAScores[5],
-        HIST: groupBScores[0] + groupBScores[1],
-        ANT: groupBScores[2] + groupBScores[3],
-        NAR: groupBScores[4] + groupBScores[5],
-        IE_IMP: groupBScores[6] + groupBScores[7],
-        IE_LIM: groupBScores[8] + groupBScores[9],
-        ANAN: groupCScores[0] + groupCScores[1],
-        DEP: groupCScores[2] + groupCScores[3],
-        ANS: groupCScores[4] + groupCScores[5],
-      };
-    }    
-  };
+  }, [scores, questions, currentTestId]); // Dependencias del efecto secundario
 
-  const goToNextQuestion = () => {
-    setCurrentQuestion(currentQuestion + 1);
-  };
 
-  const goToPreviousQuestion = () => {
-    if (currentQuestion > 0) {
-      setCurrentQuestion(currentQuestion - 1);
-    }
-  };
-
-  const resetTest = () => {
-    setCurrentQuestion(0);
-    setScores(Array(questions.length).fill(null));
-    setFinished(false);
-  };
-
-return (
+  return (
     <div className="App">
       <h1>Prueba Psicométrica</h1>
-      <nav>
-        {questionsData.map((test) => (
-          <button
-            key={test.testId}
-            disabled={isTestCompleted(test.testId)}
-            onClick={() => setCurrentTestId(test.testId)}
-            style={{ margin: '5px' }}  // Asegúrate de que los botones tengan espacio y sean visibles
-          >
-            {test.testName || 'Nombre no definido'} {isTestCompleted(test.testId) ? '✓' : ''}
-          </button>
-        ))}
-      </nav>
+      <nav>{renderTestButtons()}</nav>
       {loading ? (
         <p>Cargando...</p>
-      ) : currentTestId && (
-        <div>
-          {!finished ? (
-            <div>
-              <Question 
-                question={questions[currentQuestion]} 
-                handleAnswerClick={handleAnswerClick}
-              />
-              {currentQuestion > 0 && (
-                <button onClick={goToPreviousQuestion}>Regresar</button>
-              )}
-            </div>
-          ) : (
-            <button onClick={resetTest}>Reiniciar prueba</button>
-          )}
-        </div>
+      ) : (
+        currentTestId && questions && questions.length > 0 && currentQuestion < questions.length && (
+          <Question 
+            question={questions[currentQuestion]} 
+            handleAnswerClick={handleAnswerClick}
+          />
+        )
       )}
     </div>
   );
 }
+
+  
+
 
 export default App;
