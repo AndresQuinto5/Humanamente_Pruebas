@@ -1368,6 +1368,126 @@ export const questionsData = [
                 "points": [1, 0]
             }
         ]
+    },
+    {
+        "testId": "9", 
+        "testName": "Cuestionario Salamanca de Trastornos de la Personalidad", 
+        "instructions": "Este es un cuestionario para la valoración de algunos de sus rasgos de personalidad. Conteste según sea su manera de ser habitual y no según se encuentre en un momento dado. Donde la intensidad de su respuesta significa: 0: No estoy de acuerdo; 1: A veces; 2: Con frecuencia, y 3: Siempre.",
+        "questions": 
+        [
+            {
+                "statement": "Más vale no confiar en los demás",
+                "options": ["No estoy de acuerdo", "A veces", "Con frecuencia", "Siempre"],
+                "points": [0, 1, 2, 3]
+              },
+              {
+                "statement": "Me gustaría dar a la gente su merecido",
+                "options": ["No estoy de acuerdo", "A veces", "Con frecuencia", "Siempre"],
+                "points": [0, 1, 2, 3]
+              },
+              {
+                "statement": "Prefiero realizar actividades que pueda hacer yo solo",
+                "options": ["No estoy de acuerdo", "A veces", "Con frecuencia", "Siempre"],
+                "points": [0, 1, 2, 3]
+              },
+              {
+                "statement": "Prefiero estar conmigo mismo",
+                "options": ["No estoy de acuerdo", "A veces", "Con frecuencia", "Siempre"],
+                "points": [0, 1, 2, 3]
+              },
+              {
+                "statement": "¿Piensa la gente que es usted raro, excéntrico...?",
+                "options": ["No estoy de acuerdo", "A veces", "Con frecuencia", "Siempre"],
+                "points": [0, 1, 2, 3]
+              },
+              {
+                "statement": "¿Cree que está más en contacto con lo paranormal que la mayoría de la gente?",
+                "options": ["No estoy de acuerdo", "A veces", "Con frecuencia", "Siempre"],
+                "points": [0, 1, 2, 3]
+              },
+              {
+                "statement": "Soy demasiado emocional",
+                "options": ["No estoy de acuerdo", "A veces", "Con frecuencia", "Siempre"],
+                "points": [0, 1, 2, 3]
+              },
+              {
+                "statement": "Cuido mucho mi apariencia",
+                "options": ["No estoy de acuerdo", "A veces", "Con frecuencia", "Siempre"],
+                "points": [0, 1, 2, 3]
+              },
+              {
+                "statement": "Hago cosas que están fuera de la ley",
+                "options": ["No estoy de acuerdo", "A veces", "Con frecuencia", "Siempre"],
+                "points": [0, 1, 2, 3]
+              },
+              {
+                "statement": "Tengo poco respeto por los derechos de los demás",
+                "options": ["No estoy de acuerdo", "A veces", "Con frecuencia", "Siempre"],
+                "points": [0, 1, 2, 3]
+              },
+              {
+                "statement": "Creo que soy especial y merezco que me lo reconozcan",
+                "options": ["No estoy de acuerdo", "A veces", "Con frecuencia", "Siempre"],
+                "points": [0, 1, 2, 3]
+              },
+              {
+                "statement": "¿Cree que la gente le envidia por su valía?",
+                "options": ["No estoy de acuerdo", "A veces", "Con frecuencia", "Siempre"],
+                "points": [0, 1, 2, 3]
+              },
+              {
+                "statement": "¿Sus emociones son como una montaña rusa?",
+                "options": ["No estoy de acuerdo", "A veces", "Con frecuencia", "Siempre"],
+                "points": [0, 1, 2, 3]
+              },
+              {
+                "statement": "¿Es usted impulsivo?",
+                "options": ["No estoy de acuerdo", "A veces", "Con frecuencia", "Siempre"],
+                "points": [0, 1, 2, 3]
+              },
+              {
+                "statement": "¿Se pregunta con frecuencia cuál es su papel en la vida?",
+                "options": ["No estoy de acuerdo", "A veces", "Con frecuencia", "Siempre"],
+                "points": [0, 1, 2, 3]
+              },
+              {
+                "statement": "¿Se siente aburrido y vacío con facilidad?",
+                "options": ["No estoy de acuerdo", "A veces", "Con frecuencia", "Siempre"],
+                "points": [0, 1, 2, 3]
+              },
+              {
+                "statement": "¿Le considera la gente demasiado perfeccionista, obstinado, rígido...?",
+                "options": ["No estoy de acuerdo", "A veces", "Con frecuencia", "Siempre"],
+                "points": [0, 1, 2, 3]
+              },
+              {
+                "statement": "Soy detallista, minucioso y demasiado trabajador",
+                "options": ["No estoy de acuerdo", "A veces", "Con frecuencia", "Siempre"],
+                "points": [0, 1, 2, 3]
+              },
+              {
+                "statement": "Necesito sentirme cuidado y protegido por los demás",
+                "options": ["No estoy de acuerdo", "A veces", "Con frecuencia", "Siempre"],
+                "points": [0, 1, 2, 3]
+              },
+              {
+                "statement": "Me cuesta tomar decisiones por mí mismo",
+                "options": ["No estoy de acuerdo", "A veces", "Con frecuencia", "Siempre"],
+                "points": [0, 1, 2, 3]
+              },
+              {
+                "statement": "Soy nervioso",
+                "options": ["No estoy de acuerdo", "A veces", "Con frecuencia", "Siempre"],
+                "points": [0, 1, 2, 3]
+              },
+              {
+                "statement": "Tengo mucho miedo a hacer el ridículo",
+                "options": ["No estoy de acuerdo", "A veces", "Con frecuencia", "Siempre"],
+                "points": [0, 1, 2, 3]
+              }
+        ]
+          
+        
     }
     
 ]
