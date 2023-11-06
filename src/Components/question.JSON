@@ -295,6 +295,17 @@
           "points": [0, 1, 2]
         }
       ]
-    }
+    },
+    {
+        "testId": "7",
+        "testName": "Escala de desesperanza de Beck",
+        "questions": [
+          {
+            "statement": "Me siento ansioso",
+            "options": ["No es cierto", "Un tanto cierto", "Actualmente cierto"],
+            "points": [0, 1, 2]
+          }
+        ]
+      }
   ]
   

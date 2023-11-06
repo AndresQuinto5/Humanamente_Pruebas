@@ -1194,12 +1194,180 @@ export const questionsData = [
             },
         ]
     },
+    // {
+    //     "testId": "", 
+    //     "testName": "PRUEBA7", 
+    //     "instructions": "",
+    //     "questions": 
+    //     [
+    //     ]
+    // },
     {
-        "testId": "7", 
-        "testName": "BAI", 
-        "instructions": "",
-        "questions": 
-        [
+        "testId": "8",
+        "testName": "Desesperanza de BECK",
+        "instructions": "A continuación se presenta una serie de afirmaciones. Por favor, lea cada una y responda si para usted es Verdadero o Falso.",
+        "questions": [
+            {
+                "statement": "Espero el futuro con esperanza y entusiasmo",
+                "options": [
+                    "Verdadero",
+                    "Falso"
+                ],
+                "points": [0, 1]
+            },
+            {
+                "statement": "Puedo darme por vencido, renunciar, ya que no puedo hacer mejor las cosas por mí mismo",
+                "options": [
+                    "Verdadero",
+                    "Falso"
+                ],
+                "points": [1, 0]
+            },
+            {
+                "statement": "Cuando las cosas van mal me alivia saber que las cosas no pueden permanecer tiempo así",
+                "options": [
+                    "Verdadero",
+                    "Falso"
+                ],
+                "points": [0, 1]
+            },
+            {
+                "statement": "No puedo imaginar como será mi vida dentro de 10 años",
+                "options": [
+                    "Verdadero",
+                    "Falso"
+                ],
+                "points": [1, 0]
+            },
+            {
+                "statement": "Tengo bastante tiempo para llevar a cabo las cosas que quisiera poder hacer",
+                "options": [
+                    "Verdadero",
+                    "Falso"
+                ],
+                "points": [0, 1]
+            },
+            {
+                "statement": "En el futuro, espero conseguir lo que me pueda interesar",
+                "options": [
+                    "Verdadero",
+                    "Falso"
+                ],
+                "points": [0, 1]
+            },
+            {
+                "statement": "Mi futuro me parece oscuro",
+                "options": [
+                    "Verdadero",
+                    "Falso"
+                ],
+                "points": [1, 0]
+            },
+            {
+                "statement": "Espero más cosas buenas de la vida que lo que la gente suele conseguir por término medio",
+                "options": [
+                    "Verdadero",
+                    "Falso"
+                ],
+                "points": [0, 1]
+            },
+            {
+                "statement": "No logro hacer que las cosas cambien, y no existen razones para creer que pueda en el futuro",
+                "options": [
+                    "Verdadero",
+                    "Falso"
+                ],
+                "points": [1, 0]
+            },
+            {
+                "statement": "Mis pasadas experiencias me han preparado bien para mi futuro",
+                "options": [
+                    "Verdadero",
+                    "Falso"
+                ],
+                "points": [0, 1]
+            },
+            {
+                "statement": "Todo lo que puedo ver por delante de mí es más desagradable que agradable",
+                "options": [
+                    "Verdadero",
+                    "Falso"
+                ],
+                "points": [1, 0]
+            },
+            {
+                "statement": "No espero conseguir lo que realmente deseo",
+                "options": [
+                    "Verdadero",
+                    "Falso"
+                ],
+                "points": [1, 0]
+            },
+            {
+                "statement": "Cuando miro hacia el futuro, espero que seré más feliz de lo que soy ahora",
+                "options": [
+                    "Verdadero",
+                    "Falso"
+                ],
+                "points": [0, 1]
+            },
+            {
+                "statement": "Las cosas no marchan como yo quisiera",
+                "options": [
+                    "Verdadero",
+                    "Falso"
+                ],
+                "points": [1, 0]
+            },
+            {
+                "statement": "Tengo una gran confianza en el futuro",
+                "options": [
+                    "Verdadero",
+                    "Falso"
+                ],
+                "points": [0, 1]
+            },
+            {
+                "statement": "Nunca consigo lo que deseo, por lo que es absurdo desear cualquier cosa",
+                "options": [
+                    "Verdadero",
+                    "Falso"
+                ],
+                "points": [1, 0]
+            },
+            {
+                "statement": "Es muy improbable que pueda lograr una satisfacción real en el futuro",
+                "options": [
+                    "Verdadero",
+                    "Falso"
+                ],
+                "points": [1, 0]
+            },
+            {
+                "statement": "El futuro me parece vago e incierto",
+                "options": [
+                    "Verdadero",
+                    "Falso"
+                ],
+                "points": [1, 0]
+            },
+            {
+                "statement": "No puedo imaginar que mi vida cambie para bien",
+                "options": [
+                    "Verdadero",
+                    "Falso"
+                ],
+                "points": [0, 1]
+            },
+            {
+                "statement": "Mi vida no va a ser mejor de lo que es ahora",
+                "options": [
+                    "Verdadero",
+                    "Falso"
+                ],
+                "points": [1, 0]
+            }
         ]
     }
+    
 ]

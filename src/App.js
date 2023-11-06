@@ -4,15 +4,39 @@ import { questionsData } from './Components/questions.js';
 import { ResultsProvider } from './Components/ResultsContext';
 import { useResults } from './Components/ResultsContext';
 
-
+//1. SDQ-CAS
+//2. BECK II
+//3. BAI
+//4. PROBIOTICOS TAMIZAJE
+//5. ADHERENCIA MEDITERRANEO
+//6. VITAMINA D
+//8. ESCALA DE DESESPERANZA DE BECK
 function App() {
   const { results, addResult } = useResults(); // Obtener el estado y las funciones desde el contexto
-  const [currentTestId, setCurrentTestId] = useState("5");  // Cambia esto para cargar una prueba diferente
+  const [currentTestId, setCurrentTestId] = useState("8");  // Cambia esto para cargar una prueba diferente
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [questions, setQuestions] = useState([]);
   const [scores, setScores] = useState([]);
   const [loading, setLoading] = useState(true);
   const [finished, setFinished] = useState(false);
+
+  const isTestCompleted = (testId) => testId in results;
+
+  useEffect(() => {
+    if (currentTestId) {
+      setLoading(true);
+      const test = questionsData.find(test => test.testId === currentTestId);
+      if (test) {
+        setQuestions(test.questions);
+        setScores(Array(test.questions.length).fill(null));
+      } else {
+        console.error('Test no encontrado: ' + currentTestId);
+        alert('Test no encontrado: ' + currentTestId); // Mostrar alerta al usuario
+        setCurrentTestId(null); // Resetear el testId actual
+      }
+      setLoading(false);
+    }
+  }, [currentTestId]);
 
   useEffect(() => {
     const test = questionsData.find(test => test.testId === currentTestId);
@@ -55,7 +79,7 @@ function App() {
   };
 
   const calculateTotalScore = () => {
-    if (currentTestId === "1") {
+    if (currentTestId === "1") { 
       const scoresByCategory = {};
       questions.forEach((question, index) => {
         const category = question.category;
@@ -66,17 +90,24 @@ function App() {
         scoresByCategory[category] += score;
       });
       return scoresByCategory;
-    } else if (currentTestId === "2") {
+    } 
+    else if (currentTestId === "2") {
       return scores.reduce((a, b) => a + b, 0);
-    }else if (currentTestId === "3") {
+    }
+    else if (currentTestId === "3") {
       return scores.reduce((a, b) => a + b, 0);
-    }else if (currentTestId === "4") { 
+    }
+    else if (currentTestId === "4") { 
       return scores.reduce((a, b) => a + b, 0); 
-    }else if (currentTestId === "5") {
+    }
+    else if (currentTestId === "5") {
       return scores.reduce((a, b) => a + b, 0); 
     }
     else if (currentTestId === "6") {
       return scores.reduce((a, b) => a + b, 0); 
+    }
+    else if (currentTestId === "8") {
+      return scores.reduce((a, b) => a + b, 0);
     }
   };
 
@@ -96,12 +127,24 @@ function App() {
     setFinished(false);
   };
 
-  return (
+return (
     <div className="App">
       <h1>Prueba Psicométrica</h1>
+      <nav>
+        {questionsData.map((test) => (
+          <button
+            key={test.testId}
+            disabled={isTestCompleted(test.testId)}
+            onClick={() => setCurrentTestId(test.testId)}
+            style={{ margin: '5px' }}  // Asegúrate de que los botones tengan espacio y sean visibles
+          >
+            {test.testName || 'Nombre no definido'} {isTestCompleted(test.testId) ? '✓' : ''}
+          </button>
+        ))}
+      </nav>
       {loading ? (
         <p>Cargando...</p>
-      ) : (
+      ) : currentTestId && (
         <div>
           {!finished ? (
             <div>
@@ -109,7 +152,9 @@ function App() {
                 question={questions[currentQuestion]} 
                 handleAnswerClick={handleAnswerClick}
               />
-              {currentQuestion > 0 && <button onClick={goToPreviousQuestion}>Regresar</button>}
+              {currentQuestion > 0 && (
+                <button onClick={goToPreviousQuestion}>Regresar</button>
+              )}
             </div>
           ) : (
             <button onClick={resetTest}>Reiniciar prueba</button>
