@@ -1,10 +1,46 @@
 .App {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Alinea los elementos en una columna */
+  min-height: 100vh;
+  /* Otros estilos... */
 }
-
+form {
+  width: 100%; /* O el ancho máximo que desees para tu formulario */
+  max-width: 400px; /* Un ancho máximo para que no se vea muy ancho en pantallas grandes */
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave para darle un aspecto elevado */
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.ComenzarP {
+  background-color: #002244; /* Azul marino */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s;
+
+  /* Centrado horizontalmente */
+  display: block;
+  margin: 20px auto; /* Esto centrará tu botón en el formulario */
+}
+
+.ComenzarP:hover {
+  background-color: #003366; /* Un tono de azul marino más claro */
+  transform: translateY(-2px); /* Eleva ligeramente el botón */
+}
+
+.ComenzarP:active {
+  transform: translateY(1px); /* Efecto de clic */
 }
 
 @media (prefers-reduced-motion: no-preference) {

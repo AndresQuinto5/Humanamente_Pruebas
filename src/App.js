@@ -3,7 +3,8 @@ import Question from './Components/Question';
 import { questionsData } from './Components/questions.js';
 import { useResults } from './Components/ResultsContext';
 import calculateTotalScore from './utils/ScoreCalculator';
-
+import FormInput from './Components/FormInput'; // Asegúrate de que esta ruta sea correcta
+import "./App.css"
 
 function App() {
   const { results, addResult } = useResults(); 
@@ -15,7 +16,64 @@ function App() {
   const [finished, setFinished] = useState(false);
   const isTestCompleted = (testId) => testId in results;
   const [alertShown, setAlertShown] = useState(false);
-
+  //para el form
+  const [formCompleted, setFormCompleted] = useState(false);
+  const [formValues, setFormValues] = useState({
+    nombre: "",
+    fechaNacimiento: "",
+    email: "",
+    genero: "",
+    referente: "",
+  });
+  
+  // Definición de los inputs del formulario
+  const inputs = [
+    {
+      id: 1,
+      name: "nombre",
+      type: "text",
+      placeholder: "Nombre completo",
+      errorMessage: "El nombre es requerido",
+      label: "Nombre",
+      required: true,
+    },
+    {
+      id: 2,
+      name: "email",
+      type: "email",
+      placeholder: "Correo electrónico",
+      errorMessage: "Debe ser una dirección de correo electrónico válida",
+      label: "Correo Electrónico",
+      pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
+      required: true,
+    },    
+    {
+      id: 3,
+      name: "fechaNacimiento",
+      type: "date",
+      placeholder: "Fecha de nacimiento",
+      label: "Fecha de Nacimiento",
+      required: true,
+    },
+    // {
+    //   id: 4,
+    //   name: "genero",
+    //   type: "select",
+    //   label: "Género",
+    //   options: ["Masculino", "Femenino", "Otro"],
+    //   required: true,
+    // },
+    {
+      id: 5,
+      name: "referente",
+      type: "text",
+      placeholder: "Médico o psicólogo tratante",
+      errorMessage: "Este campo es requerido",
+      label: "Referente",
+      required: true,
+    },
+  ];
+///
   useEffect(() => {
     if (currentTestId) {
       setLoading(true);
@@ -59,7 +117,6 @@ function App() {
       setFinished(true); // Esto debería disparar el useEffect que finaliza el test
     }
   };
-  
 
   const renderTestButtons = () => (
     questionsData.map((test) => (
@@ -113,7 +170,39 @@ function App() {
     }
   }, [scores, questions, currentTestId]); // Dependencias del efecto secundario
 
+// Funciones para manejar el formulario
+const handleSubmit = (e) => {
+  e.preventDefault();
+  if (e.target.checkValidity()) {
+    setFormCompleted(true);
+  } else {
+    console.error("El formulario tiene errores");
+  }
+};
 
+const onChange = (e) => {
+  setFormValues({ ...formValues, [e.target.name]: e.target.value });
+};
+
+// Lógica para renderizar el formulario o las pruebas
+if (!formCompleted) {
+  return (
+    <div className="App">
+      <form onSubmit={handleSubmit}>
+        <h1>Tu información</h1>
+        {inputs.map((input) => (
+          <FormInput
+            key={input.id}
+            {...input}
+            value={formValues[input.name]}
+            onChange={onChange}
+          />
+        ))}
+        <button type="submit" className="ComenzarP">Comenzar Pruebas</button>
+      </form>
+    </div>
+  );
+}
   return (
     <div className="App">
       <h1>Prueba Psicométrica</h1>
@@ -131,8 +220,4 @@ function App() {
     </div>
   );
 }
-
-  
-
-
 export default App;
