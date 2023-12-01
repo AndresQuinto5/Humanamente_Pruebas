@@ -14,9 +14,13 @@ function App() {
   const [scores, setScores] = useState([]);
   const [loading, setLoading] = useState(true);
   const [finished, setFinished] = useState(false);
-  const isTestCompleted = (testId) => testId in results;
-  const [alertShown, setAlertShown] = useState(false);
-  //para el form
+  const [showTransition, setShowTransition] = useState(false); // Nuevo estado para la transición
+  const isTestCompleted = (testId) => {
+    return results.hasOwnProperty(testId);
+  };
+    const [alertShown, setAlertShown] = useState(false);
+
+  //Aqui comienzan las declaraciones para el formulario
   const [formCompleted, setFormCompleted] = useState(false);
   const [formValues, setFormValues] = useState({
     nombre: "",
@@ -72,7 +76,9 @@ function App() {
       required: true,
     },
   ];
-///
+
+  // Este efecto se ejecutará cada vez que currentTestId cambie
+  // y se asegurará de que las preguntas y las puntuaciones se actualicen
   useEffect(() => {
     if (currentTestId) {
       setLoading(true);
@@ -81,39 +87,40 @@ function App() {
         setQuestions(test.questions);
         setScores(Array(test.questions.length).fill(null));
       } else {
-        alert('Test no encontrado: ' + currentTestId);
+        // alert('Test no encontrado: ' + currentTestId);
         setCurrentTestId(null);
       }
       setLoading(false);
     }
   }, [currentTestId]);
 
-  useEffect(() => {
-    if (finished && !alertShown) {
-      const totalScore = calculateTotalScore(currentTestId, scores, questions);
-      addResult(currentTestId, totalScore); 
-      alert(`Prueba completada. Tu puntuación total es ${JSON.stringify(totalScore)}`);
-      setAlertShown(true); // Asegúrate de que el alert se muestra solo una vez
-    }
-  }, [finished, currentTestId, scores, questions, addResult, alertShown]);
+  // // Este efecto se ejecutará cada vez que finished cambie y se asegurará de que se muestre el mensaje de alerta solo una vez por prueba el cual indica que la prueba se ha completado
+  // useEffect(() => {
+  //   if (finished && !alertShown) {
+  //     const totalScore = calculateTotalScore(currentTestId, scores, questions);
+  //     addResult(currentTestId, totalScore); 
+  //     // alert(`Prueba completada. Tu puntuación total es ${JSON.stringify(totalScore)}`);
+  //     setAlertShown(true); // Asegúrate de que el alert se muestra solo una vez
+  //   }
+  // }, [finished, currentTestId, scores, questions, addResult, alertShown]);
+
   // Este useEffect se asegurará de que cada vez que results se actualice, se imprima el estado actualizado
   useEffect(() => {
     console.log('Todos los resultados hasta ahora:', results);
   }, [results]);
 
+  // Manejador de clic en respuesta actualizado para manejar el fin de las preguntas correctamente
   const handleAnswerClick = (score) => {
-    setScores((prevScores) => {
-      const newScores = [...prevScores];
-      newScores[currentQuestion] = score;
-      return newScores;
-    });
-  
-    // Si no es la última pregunta, avanza a la siguiente
-    if (currentQuestion < questions.length - 1) {
-      setCurrentQuestion(currentQuestion + 1);
+    const updatedScores = [...scores];
+    updatedScores[currentQuestion] = score;
+
+    const isLastQuestion = currentQuestion === questions.length - 1;
+    setScores(updatedScores);
+
+    if (isLastQuestion) {
+      setFinished(true);
     } else {
-      // Si es la última pregunta, termina el test después de actualizar las puntuaciones
-      setFinished(true); // Esto debería disparar el useEffect que finaliza el test
+      setCurrentQuestion(currentQuestion + 1);
     }
   };
 
@@ -132,42 +139,41 @@ function App() {
     </div>
   );
 
-  const goToNextTest = () => {
-    const currentIndex = questionsData.findIndex((test) => test.testId === currentTestId);
-    const nextIndex = currentIndex + 1;
-    
-    if (nextIndex < questionsData.length) {
-      const nextTestId = questionsData[nextIndex].testId;
-      setCurrentTestId(nextTestId);
-      setCurrentQuestion(0);
-      setScores(Array(questionsData[nextIndex].questions.length).fill(null));
-      // No es necesario cambiar 'finished' ni 'alertShown' aquí
-    } else {
-      console.log("No hay más pruebas disponibles.");
-      setCurrentTestId(null); // Puedes establecer un estado para mostrar un mensaje final si lo deseas
-    }
-  };
-
+  // Mover la lógica de goToNextTest dentro de handleFinishTest
   const handleFinishTest = () => {
     const totalScore = calculateTotalScore(currentTestId, scores, questions);
     addResult(currentTestId, totalScore);
-    goToNextTest(); 
-    setAlertShown(false); // Reset the alert shown state
+    setShowTransition(true); // Mostrar transición
+    setTimeout(() => {
+      // Busca la siguiente prueba no completada
+      const nextTest = questionsData.find(
+        (test) => !isTestCompleted(test.testId) && test.testId !== currentTestId
+      );
+      
+      if (nextTest) {
+        setCurrentTestId(nextTest.testId);
+        setCurrentQuestion(0);
+        setScores(Array(nextTest.questions.length).fill(null));
+      } else {
+        setCurrentTestId(null); // No hay más pruebas, se establece a null
+      }
+      setShowTransition(false); // Oculta la pantalla de transición
+      setFinished(false); // Restablece para la nueva prueba
+      }, 1000); // 2 segundos de transición
   };
 
+  // Este efecto maneja la finalización de una prueba y pasa a la siguiente
   useEffect(() => {
-    // If finished is true, then complete the test and reset finished state
     if (finished) {
       handleFinishTest();
-      setFinished(false); // Reset finished state for the new test
     }
-  }, [finished]); // Effect for handling completion of a test
+  }, [finished, currentTestId, scores, questions]); // Asegúrate de incluir todas las dependencias necesarias
   
   useEffect(() => {
     if (scores.some(score => score !== null)) { // Verificar si hay al menos una respuesta
-      console.log(`Respuestas para la prueba ${currentTestId}:`);
+      // console.log(`Respuestas para la prueba ${currentTestId}:`);
       questions.forEach((question, index) => {
-        console.log(`Pregunta ${index + 1}: ${question.statement}, Respuesta: ${scores[index]}`);
+        // console.log(`Pregunta ${index + 1}: ${question.statement}, Respuesta: ${scores[index]}`);
       });
     }
   }, [scores, questions, currentTestId]); // Dependencias del efecto secundario
@@ -208,9 +214,31 @@ if (!formCompleted) {
     </div>
   );
 }
+if (showTransition) {
+ // Pantalla de transición con spinner
+    return (
+      <div className="App transition-screen">
+        <div className="spinner"></div>
+        <h2>Cargando siguiente prueba...</h2>
+      </div>
+    );
+}
+// Renderizado condicional basado en si se completaron todas las pruebas o no
+else if (currentTestId === null) {
+  // Mensaje de pruebas completadas
   return (
     <div className="App">
-      <h1>Prueba Psicométrica</h1>
+      <div className="tests-completed-message">
+        <h2>Todas las pruebas se han completado. No es necesario realizar nada más.</h2>
+        {/* Opcional: agregar otros componentes o mensajes */}
+      </div>
+    </div>
+  );
+} else {
+  // Renderizado normal de las pruebas
+  return (
+    <div className="App">
+      {/* <h1>Prueba Psicométrica</h1> */}
       {renderTestButtons()}
       <h2>{currentTestId && questionsData.find(test => test.testId === currentTestId)?.testName}</h2>
       {loading ? (
@@ -226,4 +254,6 @@ if (!formCompleted) {
     </div>
   );
 }
+}
+
 export default App;
