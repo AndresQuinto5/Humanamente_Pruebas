@@ -11,12 +11,22 @@ const handleFocus = (e) => {
 
 const handleBlur = (e) => {
   setFocused(e.target.checkValidity());
+
+  // Si el tipo de input es "email", realiza la validación adicional
+  if (inputProps.type === "email" && !validateEmail(e.target.value)) {
+    e.target.setCustomValidity(errorMessage);
+  } else {
+    e.target.setCustomValidity("");
+  }
+  
 };
 
 const validateEmail = (email) => {
+  // Esta es la expresión regular para validar el correo electrónico.
   const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
   return re.test(String(email).toLowerCase());
 };
+
 
 if (inputProps.type === "email") {
   return (

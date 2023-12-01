@@ -22,7 +22,7 @@ function App() {
     nombre: "",
     fechaNacimiento: "",
     email: "",
-    genero: "",
+    // genero: "",
     referente: "",
   });
   
@@ -44,7 +44,6 @@ function App() {
       placeholder: "Correo electrónico",
       errorMessage: "Debe ser una dirección de correo electrónico válida",
       label: "Correo Electrónico",
-      pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$",
       required: true,
     },    
     {
@@ -119,15 +118,18 @@ function App() {
   };
 
   const renderTestButtons = () => (
-    questionsData.map((test) => (
-      <button
-        key={test.testId}
-        disabled={isTestCompleted(test.testId)}
-        onClick={() => setCurrentTestId(test.testId)}
-      >
-        {test.testName || 'Nombre no definido'} {isTestCompleted(test.testId) ? '✓' : ''}
-      </button>
-    ))
+    <div className="test-buttons-container">
+      {questionsData.map((test) => (
+        <button
+          key={test.testId}
+          className={`test-button ${currentTestId === test.testId ? 'active-test' : ''}`}
+          disabled={isTestCompleted(test.testId)}
+          onClick={() => setCurrentTestId(test.testId)}
+        >
+          {test.testName || 'Nombre no definido'} {isTestCompleted(test.testId) ? '✓' : ''}
+        </button>
+      ))}
+    </div>
   );
 
   const goToNextTest = () => {
@@ -174,7 +176,10 @@ function App() {
 const handleSubmit = (e) => {
   e.preventDefault();
   if (e.target.checkValidity()) {
+    addResult("formulario", formValues);
     setFormCompleted(true);
+    console.log("Formulario completado");
+    console.log(formValues);
   } else {
     console.error("El formulario tiene errores");
   }
@@ -206,13 +211,14 @@ if (!formCompleted) {
   return (
     <div className="App">
       <h1>Prueba Psicométrica</h1>
-      <nav>{renderTestButtons()}</nav>
+      {renderTestButtons()}
+      <h2>{currentTestId && questionsData.find(test => test.testId === currentTestId)?.testName}</h2>
       {loading ? (
         <p>Cargando...</p>
       ) : (
         currentTestId && questions && questions.length > 0 && currentQuestion < questions.length && (
-          <Question 
-            question={questions[currentQuestion]} 
+          <Question
+            question={questions[currentQuestion]}
             handleAnswerClick={handleAnswerClick}
           />
         )
