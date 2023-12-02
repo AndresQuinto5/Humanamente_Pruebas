@@ -159,7 +159,7 @@ function App() {
       }
       setShowTransition(false); // Oculta la pantalla de transición
       setFinished(false); // Restablece para la nueva prueba
-      }, 1000); // 2 segundos de transición
+      }, 1000); // 1 segundos de transición
   };
 
   // Este efecto maneja la finalización de una prueba y pasa a la siguiente
@@ -219,7 +219,6 @@ if (showTransition) {
     return (
       <div className="App transition-screen">
         <div className="spinner"></div>
-        <h2>Cargando siguiente prueba...</h2>
       </div>
     );
 }

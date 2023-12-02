@@ -387,7 +387,7 @@ export const questionsData = [
     {
         "testId": "2", 
         "testName": "Inventario de Depresión de Beck II", 
-        "instructions": "",
+        "instructions": "Lea cada grupo de afirmaciones cuidadosamente, seleccione la que mejor describa la manera en que se ha sentido durante la semana pasada (incluyendo hoy).",
         "questions": 
         [
             {
@@ -619,7 +619,7 @@ export const questionsData = [
     {
         "testId": "3", 
         "testName": "BAI", 
-        "instructions": "",
+        "instructions": "A continuación se presentan una lista de síntomas comunes de la ansiedad. Indique cuánto le han molestado estos síntomas durante la última semana (incluyendo hoy)." ,
         "questions": 
         [
             {
@@ -858,7 +858,7 @@ export const questionsData = [
     {
         "testId": "4", 
         "testName": "Tamizaje de probioticos", 
-        "instructions": "",
+        "instructions": "Lea cada una de las preguntas detenidamente y seleccione la respuesta que mejor describa su situación actual.",
         "questions": 
         [
             {
@@ -947,7 +947,7 @@ export const questionsData = [
     {
         "testId": "5", 
         "testName": "Cuestionario de adherencia a la dieta mediterranea", 
-        "instructions": "",
+        "instructions": "Con este cuestionario podrá conocer cuáles son sus hábitos alimentarios. Responda a las preguntas que se le plantean.",
         "questions": 
         [
             {
@@ -963,8 +963,8 @@ export const questionsData = [
                 "statement": "¿Cuánto aceite de oliva consume en total al día (incluyendo el usado para freír, comidas fuera de casa, ensaladas, etc.)?", 
 
                 "options": [
-                    "2 o más cucharadas", 
-                    "Menos de 2"],
+                    "2 o más cucharadas al día", 
+                    "Menos de 2 al día"],
 
                 "points": [1,0]
             },
@@ -973,7 +973,7 @@ export const questionsData = [
 
                 "options": [
                     "2 o más al dia (al menos una de ellas en ensaladas o crudas)", 
-                    "Menos de 2"],
+                    "Menos de 2 al día"],
 
                 "points": [1,0]
             },
@@ -982,16 +982,16 @@ export const questionsData = [
 
                 "options": [
                     "3 o más al dia", 
-                    "Menos de 3"],
+                    "Menos de 3 al día"],
 
                 "points": [1,0]
             },
             {
-                "statement": "¿Cuantas raciones de carnes rojas, hamburguesas, salchichas o embutidos consume al día? (ración: 100 - 150 g)", 
+                "statement": "¿Cuantas raciones de carnes rojas, hamburguesas, salchichas o embutidos consume al día? (una ración equivale a: 100 - 150 g)", 
 
                 "options": [
                     "Menos de una al día", 
-                    "Menos de 1"],
+                    "Más de 1 al dia"],
 
                 "points": [1,0]
             },
@@ -1018,7 +1018,7 @@ export const questionsData = [
 
                 "options": [
                     "3 o más vasos por semana", 
-                    "Menos de 3"],
+                    "Menos de 3 vasos por semana"],
 
                 "points": [1,0]
             },
@@ -1027,7 +1027,7 @@ export const questionsData = [
 
                 "options": [
                     "3 o más por semana", 
-                    "Menos de 3"],
+                    "Menos de 3 por semana"],
 
                 "points": [1,0]
             },
@@ -1036,7 +1036,7 @@ export const questionsData = [
 
                 "options": [
                     "3 o más por semana", 
-                    "Menos de 3"],
+                    "Menos de 3 por semana"],
 
                 "points": [1,0]
             },
@@ -1045,7 +1045,7 @@ export const questionsData = [
 
                 "options": [
                     "Menos de 3 por semana", 
-                    "Más de 3"],
+                    "Más de 3 por semana"],
 
                 "points": [1,0]
             },
@@ -1072,7 +1072,7 @@ export const questionsData = [
 
                 "options": [
                     "2 o más al por semana", 
-                    "Menos de 2"],
+                    "Menos de 2 por semana"],
 
                 "points": [1,0]
             }
@@ -1081,7 +1081,7 @@ export const questionsData = [
     {
         "testId": "6", 
         "testName": "Tamizaje vitamina D", 
-        "instructions": "",
+        "instructions": "Lea cada una de las preguntas detenidamente y seleccione la respuesta que mejor describa su situación actual.",
         "questions": 
         [
             {
@@ -1376,7 +1376,7 @@ export const questionsData = [
         "questions": 
         [
             {
-                "statement": "Más vale no confiar en los demás",
+                "statement": "Pienso que más vale no confiar en los demás",
                 "options": ["No estoy de acuerdo", "A veces", "Con frecuencia", "Siempre"],
                 "points": [0, 1, 2, 3]
               },
@@ -1401,7 +1401,7 @@ export const questionsData = [
                 "points": [0, 1, 2, 3]
               },
               {
-                "statement": "¿Cree que está más en contacto con lo paranormal que la mayoría de la gente?",
+                "statement": "Estoy más en contacto con lo paranormal que la mayoría de la gente",
                 "options": ["No estoy de acuerdo", "A veces", "Con frecuencia", "Siempre"],
                 "points": [0, 1, 2, 3]
               },
@@ -1411,7 +1411,7 @@ export const questionsData = [
                 "points": [0, 1, 2, 3]
               },
               {
-                "statement": "Cuido mucho mi apariencia",
+                "statement": "Doy mucha importancia y atención a mi imagen",
                 "options": ["No estoy de acuerdo", "A veces", "Con frecuencia", "Siempre"],
                 "points": [0, 1, 2, 3]
               },
@@ -1431,7 +1431,7 @@ export const questionsData = [
                 "points": [0, 1, 2, 3]
               },
               {
-                "statement": "¿Cree que la gente le envidia por su valía?",
+                "statement": "Mucha gente me envidia por mi valía",
                 "options": ["No estoy de acuerdo", "A veces", "Con frecuencia", "Siempre"],
                 "points": [0, 1, 2, 3]
               },
