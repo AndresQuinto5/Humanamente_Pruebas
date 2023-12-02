@@ -8,7 +8,7 @@ import "./App.css"
 
 function App() {
   const { results, addResult } = useResults(); 
-  const [currentTestId, setCurrentTestId] = useState("1");  
+  const [currentTestId, setCurrentTestId] = useState("2");  
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [questions, setQuestions] = useState([]);
   const [scores, setScores] = useState([]);

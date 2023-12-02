@@ -1,18 +1,18 @@
 // /utils/ScoreCalculator.js
 
 // Función para SDQ-CAS
-const calculateSDQ_CAS = (scores, questions) => {
-    const scoresByCategory = {};
-    questions.forEach((question, index) => {
-      const category = question.category;
-      const score = scores[index];
-      if (!scoresByCategory[category]) {
-        scoresByCategory[category] = 0;
-      }
-      scoresByCategory[category] += score;
-    });
-    return scoresByCategory;
-  };
+// const calculateSDQ_CAS = (scores, questions) => {
+//     const scoresByCategory = {};
+//     questions.forEach((question, index) => {
+//       const category = question.category;
+//       const score = scores[index];
+//       if (!scoresByCategory[category]) {
+//         scoresByCategory[category] = 0;
+//       }
+//       scoresByCategory[category] += score;
+//     });
+//     return scoresByCategory;
+//   };
   
   // Función para BECK II, BAI, Probióticos, Adherencia Mediterráneo y Vitamina D
   // Todos estos tests utilizan la misma lógica de cálculo
@@ -70,11 +70,25 @@ const calculateSDQ_CAS = (scores, questions) => {
     };
   };
   
+    //Funcion para calificar el test de MDQ Mood Disorder Questionnaire 
+  const calculateMDQScore = (scores) => {
+    // Sumar los primeros 13 ítems
+    const sumFirst13 = scores.slice(0, 13).reduce((sum, score) => sum + score, 0);
+
+    // Obtener respuestas a las preguntas restantes
+    const additionalResponses = {
+      q14: scores[13],
+      q15: scores[14],
+      q16: scores[15]
+    };
+
+    return { sumFirst13, ...additionalResponses };
+  };
   // Función principal que maneja el cálculo de puntuaciones basado en el testId
   const calculateTotalScore = (testId, scores, questions) => {
     switch (testId) {
-      case "1":
-        return calculateSDQ_CAS(scores, questions);
+      // case "1":
+      //   return calculateSDQ_CAS(scores, questions);
       case "2":
       case "3":
       case "4":
@@ -85,6 +99,8 @@ const calculateSDQ_CAS = (scores, questions) => {
         return calculateBeckDesesperanza(scores);
       case "9":
         return calculateSalamanca(scores);
+      case "10":
+        return calculateMDQScore(scores);
       default:
         throw new Error(`Test ID ${testId} no reconocido`);
     }

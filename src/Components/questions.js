@@ -1,389 +1,389 @@
 export const questionsData = [
-    {
-        "testId": "1",
-        "testName": "SDQ-CAS",
-        "instructions": "",
-        "questions": [
-            {
-                "statement": "Tiene en cuenta los sentimientos de otras personas",
-                "options": [
-                    "No es cierto",
-                    "Un tanto cierto",
-                    "Absolutamente cierto"
-                ],
-                "points": [
-                    0,
-                    1,
-                    2
-                ],
-                "reversePoints": false,
-                "category": "Escala prosocial"
+    // {
+    //     "testId": "1",
+    //     "testName": "SDQ-CAS",
+    //     "instructions": "",
+    //     "questions": [
+    //         {
+    //             "statement": "Tiene en cuenta los sentimientos de otras personas",
+    //             "options": [
+    //                 "No es cierto",
+    //                 "Un tanto cierto",
+    //                 "Absolutamente cierto"
+    //             ],
+    //             "points": [
+    //                 0,
+    //                 1,
+    //                 2
+    //             ],
+    //             "reversePoints": false,
+    //             "category": "Escala prosocial"
                 
-            },
-            {
-                "statement": "Es inquieto/a, hiperactivo/a, no puede permanecer quieto/a por mucho tiempo",
-                "options": [
-                    "No es cierto",
-                    "Un tanto cierto",
-                    "Absolutamente cierto"
-                ],
-                "points": [
-                    0,
-                    1,
-                    2
-                ],
-                "reversePoints": false,
-                "category": "Escala de hiperactividad"
-            },
-            {
-                "statement": "Se queja con frecuencia de dolor de cabeza, de estómago o de náuseas",
-                "options": [
-                    "No es cierto",
-                    "Un tanto cierto",
-                    "Absolutamente cierto"
-                ],
-                "points": [
-                    0,
-                    1,
-                    2
-                ],
-                "reversePoints": false,
-                "category": "Escala de síntomas emocionales"
-            },
-            {
-                "statement": "Comparte frecuentemente con otros niños/as chucherías, juguetes, lápices, etc",
-                "options": [
-                    "No es cierto",
-                    "Un tanto cierto",
-                    "Absolutamente cierto"
-                ],
-                "points": [
-                    0,
-                    1,
-                    2
-                ],
-                "reversePoints": false,
-                "category": "Escala prosocial"
-            },
-            {
-                "statement": "Frecuentemente tiene rabietas o mal genio",
-                "options": [
-                    "No es cierto",
-                    "Un tanto cierto",
-                    "Absolutamente cierto"
-                ],
-                "points": [
-                    0,
-                    1,
-                    2
-                ],
-                "reversePoints": false,
-                "category": "Escala de problemas de conducta"
-            },
-            {
-                "statement": "Es más bien solitario/a y tiende a jugar solo/a",
-                "options": [
-                    "No es cierto",
-                    "Un tanto cierto",
-                    "Absolutamente cierto"
-                ],
-                "points": [
-                    0,
-                    1,
-                    2
-                ],
-                "reversePoints": false,
-                "category": "Escala de problemas con compañeros/as"
-            },
-            {
-                "statement": "Por lo general es obediente, suele hacer lo que le piden los adultos",
-                "options": [
-                    "No es cierto",
-                    "Un tanto cierto",
-                    "Absolutamente cierto"
-                ],
-                "points": [
-                    0,
-                    1,
-                    2
-                ],
-                "reversePoints": true,
-                "category": "Escala de problemas de conducta"
-            },
-            {
-                "statement": "Tiene muchas preocupaciones, a menudo parece inquieto/a o preocupado/a",
-                "options": [
-                    "No es cierto",
-                    "Un tanto cierto",
-                    "Absolutamente cierto"
-                ],
-                "points": [
-                    0,
-                    1,
-                    2
-                ],
-                "reversePoints": false,
-                "category": "Escala de síntomas emocionales"
-            },
-            /////////////////////////////////////////////
-            {
-                "statement": "Ofrece ayuda cuando alguien resulta herido, disgustado, o enfermo",
-                "options": [
-                    "No es cierto",
-                    "Un tanto cierto",
-                    "Absolutamente cierto"
-                ],
-                "points": [
-                    0,
-                    1,
-                    2
-                ],
-                "reversePoints": false,
-                "category": "Escala prosocial"
-            },
-            {
-                "statement": "Está continuamente moviéndose y es revoltoso",
-                "options": [
-                    "No es cierto",
-                    "Un tanto cierto",
-                    "Absolutamente cierto"
-                ],
-                "points": [
-                    0,
-                    1,
-                    2
-                ],
-                "reversePoints": false,
-                "category": "Escala de hiperactividad"
-            },
-            {
-                "statement": "Tiene por lo menos un/a buen/a amigo/a",
-                "options": [
-                    "No es cierto",
-                    "Un tanto cierto",
-                    "Absolutamente cierto"
-                ],
-                "points": [
-                    0,
-                    1,
-                    2
-                ],
-                "reversePoints": true,
-                "category": "Escala de problemas con compañeros/as"
-            },
-            {
-                "statement": "Pelea con frecuencia con otros niños/as o se mete con ellos/ellas",
-                "options": [
-                    "No es cierto",
-                    "Un tanto cierto",
-                    "Absolutamente cierto"
-                ],
-                "points": [
-                    0,
-                    1,
-                    2
-                ],
-                "reversePoints": false,
-                "category": "Escala de problemas de conducta"
-            },
-            {
-                "statement": "Se siente a menudo infeliz, desanimado o lloroso",
-                "options": [
-                    "No es cierto",
-                    "Un tanto cierto",
-                    "Absolutamente cierto"
-                ],
-                "points": [
-                    0,
-                    1,
-                    2
-                ],
-                "reversePoints": false,
-                "category": "Escala de síntomas emocionales"
-            },
-            {
-                "statement": "Por lo general cae bien a los otros niños/as",
-                "options": [
-                    "No es cierto",
-                    "Un tanto cierto",
-                    "Absolutamente cierto"
-                ],
-                "points": [
-                    0,
-                    1,
-                    2
-                ],
-                "reversePoints": true,
-                "category": "Escala de problemas con compañeros/as"
-            },
-            {
-                "statement": "Se distrae con facilidad, su concentración tiende a dispersarse",
-                "options": [
-                    "No es cierto",
-                    "Un tanto cierto",
-                    "Absolutamente cierto"
-                ],
-                "points": [
-                    0,
-                    1,
-                    2
-                ],
-                "reversePoints": false,
-                "category": "Escala de hiperactividad"
-            },
-            {
-                "statement": "Es nervioso/a o dependiente ante nuevas situaciones, fácilmente pierde la confianza en sí mismo/a",
-                "options": [
-                    "No es cierto",
-                    "Un tanto cierto",
-                    "Absolutamente cierto"
-                ],
-                "points": [
-                    0,
-                    1,
-                    2
-                ],
-                "reversePoints": false,
-                "category": "Escala de síntomas emocionales"
-            },
-            /////////////////////////////////////
-            {
-                "statement": "Trata bien a los niños/as más pequeños/as",
-                "options": [
-                    "No es cierto",
-                    "Un tanto cierto",
-                    "Absolutamente cierto"
-                ],
-                "points": [
-                    0,
-                    1,
-                    2
-                ],
-                "reversePoints": false,
-                "category": "Escala prosocial"
-            },
-            {
-                "statement": "A menudo miente o engaña",
-                "options": [
-                    "No es cierto",
-                    "Un tanto cierto",
-                    "Absolutamente cierto"
-                ],
-                "points": [
-                    0,
-                    1,
-                    2
-                ],
-                "reversePoints": false,
-                "category": "Escala de problemas de conducta"
-            },
-            {
-                "statement": "Los otros niños/as se meten con él/ella o se burlan de él/ella",
-                "options": [
-                    "No es cierto",
-                    "Un tanto cierto",
-                    "Absolutamente cierto"
-                ],
-                "points": [
-                    0,
-                    1,
-                    2
-                ],
-                "reversePoints": false,
-                "category": "Escala de problemas con compañeros/as"
-            },
-            {
-                "statement": "A menudo se ofrece para ayudar (a padres, maestros, otros niños/as)",
-                "options": [
-                    "No es cierto",
-                    "Un tanto cierto",
-                    "Absolutamente cierto"
-                ],
-                "points": [
-                    0,
-                    1,
-                    2
-                ],
-                "reversePoints": false,
-                "category": "Escala prosocial"
-            },
-            {
-                "statement": "Piensa las cosas antes de hacerlas",
-                "options": [
-                    "No es cierto",
-                    "Un tanto cierto",
-                    "Absolutamente cierto"
-                ],
-                "points": [
-                    0,
-                    1,
-                    2
-                ],
-                "reversePoints": true,
-                "category": "Escala de hiperactividad"
-            },
-            {
-                "statement": "Roba cosas en casa, en la escuela o en otros sitiosz",
-                "options": [
-                    "No es cierto",
-                    "Un tanto cierto",
-                    "Absolutamente cierto"
-                ],
-                "points": [
-                    0,
-                    1,
-                    2
-                ],
-                "reversePoints": false,
-                "category": "Escala de problemas de conducta"
-            },
-            {
-                "statement": "Se lleva mejor con adultos que con otros niños/as",
-                "options": [
-                    "No es cierto",
-                    "Un tanto cierto",
-                    "Absolutamente cierto"
-                ],
-                "points": [
-                    0,
-                    1,
-                    2
-                ],
-                "reversePoints": false,
-                "category": "Escala de problemas con compañeros/as"
-            },
-            {
-                "statement": "Tiene muchos miedos, se asusta fácilmente",
-                "options": [
-                    "No es cierto",
-                    "Un tanto cierto",
-                    "Absolutamente cierto"
-                ],
-                "points": [
-                    0,
-                    1,
-                    2
-                ],
-                "reversePoints": false,
-                "category": "Escala de síntomas emocionales"
-            },
-            {
-                "statement": "Termina lo que empieza, tiene buena concentración",
-                "options": [
-                    "No es cierto",
-                    "Un tanto cierto",
-                    "Absolutamente cierto"
-                ],
-                "points": [
-                    0,
-                    1,
-                    2
-                ],
-                "reversePoints": true,
-                "category": "Escala de hiperactividad"
-            }/////////////////////////////////
-        ]
-    },
+    //         },
+    //         {
+    //             "statement": "Es inquieto/a, hiperactivo/a, no puede permanecer quieto/a por mucho tiempo",
+    //             "options": [
+    //                 "No es cierto",
+    //                 "Un tanto cierto",
+    //                 "Absolutamente cierto"
+    //             ],
+    //             "points": [
+    //                 0,
+    //                 1,
+    //                 2
+    //             ],
+    //             "reversePoints": false,
+    //             "category": "Escala de hiperactividad"
+    //         },
+    //         {
+    //             "statement": "Se queja con frecuencia de dolor de cabeza, de estómago o de náuseas",
+    //             "options": [
+    //                 "No es cierto",
+    //                 "Un tanto cierto",
+    //                 "Absolutamente cierto"
+    //             ],
+    //             "points": [
+    //                 0,
+    //                 1,
+    //                 2
+    //             ],
+    //             "reversePoints": false,
+    //             "category": "Escala de síntomas emocionales"
+    //         },
+    //         {
+    //             "statement": "Comparte frecuentemente con otros niños/as chucherías, juguetes, lápices, etc",
+    //             "options": [
+    //                 "No es cierto",
+    //                 "Un tanto cierto",
+    //                 "Absolutamente cierto"
+    //             ],
+    //             "points": [
+    //                 0,
+    //                 1,
+    //                 2
+    //             ],
+    //             "reversePoints": false,
+    //             "category": "Escala prosocial"
+    //         },
+    //         {
+    //             "statement": "Frecuentemente tiene rabietas o mal genio",
+    //             "options": [
+    //                 "No es cierto",
+    //                 "Un tanto cierto",
+    //                 "Absolutamente cierto"
+    //             ],
+    //             "points": [
+    //                 0,
+    //                 1,
+    //                 2
+    //             ],
+    //             "reversePoints": false,
+    //             "category": "Escala de problemas de conducta"
+    //         },
+    //         {
+    //             "statement": "Es más bien solitario/a y tiende a jugar solo/a",
+    //             "options": [
+    //                 "No es cierto",
+    //                 "Un tanto cierto",
+    //                 "Absolutamente cierto"
+    //             ],
+    //             "points": [
+    //                 0,
+    //                 1,
+    //                 2
+    //             ],
+    //             "reversePoints": false,
+    //             "category": "Escala de problemas con compañeros/as"
+    //         },
+    //         {
+    //             "statement": "Por lo general es obediente, suele hacer lo que le piden los adultos",
+    //             "options": [
+    //                 "No es cierto",
+    //                 "Un tanto cierto",
+    //                 "Absolutamente cierto"
+    //             ],
+    //             "points": [
+    //                 0,
+    //                 1,
+    //                 2
+    //             ],
+    //             "reversePoints": true,
+    //             "category": "Escala de problemas de conducta"
+    //         },
+    //         {
+    //             "statement": "Tiene muchas preocupaciones, a menudo parece inquieto/a o preocupado/a",
+    //             "options": [
+    //                 "No es cierto",
+    //                 "Un tanto cierto",
+    //                 "Absolutamente cierto"
+    //             ],
+    //             "points": [
+    //                 0,
+    //                 1,
+    //                 2
+    //             ],
+    //             "reversePoints": false,
+    //             "category": "Escala de síntomas emocionales"
+    //         },
+    //         /////////////////////////////////////////////
+    //         {
+    //             "statement": "Ofrece ayuda cuando alguien resulta herido, disgustado, o enfermo",
+    //             "options": [
+    //                 "No es cierto",
+    //                 "Un tanto cierto",
+    //                 "Absolutamente cierto"
+    //             ],
+    //             "points": [
+    //                 0,
+    //                 1,
+    //                 2
+    //             ],
+    //             "reversePoints": false,
+    //             "category": "Escala prosocial"
+    //         },
+    //         {
+    //             "statement": "Está continuamente moviéndose y es revoltoso",
+    //             "options": [
+    //                 "No es cierto",
+    //                 "Un tanto cierto",
+    //                 "Absolutamente cierto"
+    //             ],
+    //             "points": [
+    //                 0,
+    //                 1,
+    //                 2
+    //             ],
+    //             "reversePoints": false,
+    //             "category": "Escala de hiperactividad"
+    //         },
+    //         {
+    //             "statement": "Tiene por lo menos un/a buen/a amigo/a",
+    //             "options": [
+    //                 "No es cierto",
+    //                 "Un tanto cierto",
+    //                 "Absolutamente cierto"
+    //             ],
+    //             "points": [
+    //                 0,
+    //                 1,
+    //                 2
+    //             ],
+    //             "reversePoints": true,
+    //             "category": "Escala de problemas con compañeros/as"
+    //         },
+    //         {
+    //             "statement": "Pelea con frecuencia con otros niños/as o se mete con ellos/ellas",
+    //             "options": [
+    //                 "No es cierto",
+    //                 "Un tanto cierto",
+    //                 "Absolutamente cierto"
+    //             ],
+    //             "points": [
+    //                 0,
+    //                 1,
+    //                 2
+    //             ],
+    //             "reversePoints": false,
+    //             "category": "Escala de problemas de conducta"
+    //         },
+    //         {
+    //             "statement": "Se siente a menudo infeliz, desanimado o lloroso",
+    //             "options": [
+    //                 "No es cierto",
+    //                 "Un tanto cierto",
+    //                 "Absolutamente cierto"
+    //             ],
+    //             "points": [
+    //                 0,
+    //                 1,
+    //                 2
+    //             ],
+    //             "reversePoints": false,
+    //             "category": "Escala de síntomas emocionales"
+    //         },
+    //         {
+    //             "statement": "Por lo general cae bien a los otros niños/as",
+    //             "options": [
+    //                 "No es cierto",
+    //                 "Un tanto cierto",
+    //                 "Absolutamente cierto"
+    //             ],
+    //             "points": [
+    //                 0,
+    //                 1,
+    //                 2
+    //             ],
+    //             "reversePoints": true,
+    //             "category": "Escala de problemas con compañeros/as"
+    //         },
+    //         {
+    //             "statement": "Se distrae con facilidad, su concentración tiende a dispersarse",
+    //             "options": [
+    //                 "No es cierto",
+    //                 "Un tanto cierto",
+    //                 "Absolutamente cierto"
+    //             ],
+    //             "points": [
+    //                 0,
+    //                 1,
+    //                 2
+    //             ],
+    //             "reversePoints": false,
+    //             "category": "Escala de hiperactividad"
+    //         },
+    //         {
+    //             "statement": "Es nervioso/a o dependiente ante nuevas situaciones, fácilmente pierde la confianza en sí mismo/a",
+    //             "options": [
+    //                 "No es cierto",
+    //                 "Un tanto cierto",
+    //                 "Absolutamente cierto"
+    //             ],
+    //             "points": [
+    //                 0,
+    //                 1,
+    //                 2
+    //             ],
+    //             "reversePoints": false,
+    //             "category": "Escala de síntomas emocionales"
+    //         },
+    //         /////////////////////////////////////
+    //         {
+    //             "statement": "Trata bien a los niños/as más pequeños/as",
+    //             "options": [
+    //                 "No es cierto",
+    //                 "Un tanto cierto",
+    //                 "Absolutamente cierto"
+    //             ],
+    //             "points": [
+    //                 0,
+    //                 1,
+    //                 2
+    //             ],
+    //             "reversePoints": false,
+    //             "category": "Escala prosocial"
+    //         },
+    //         {
+    //             "statement": "A menudo miente o engaña",
+    //             "options": [
+    //                 "No es cierto",
+    //                 "Un tanto cierto",
+    //                 "Absolutamente cierto"
+    //             ],
+    //             "points": [
+    //                 0,
+    //                 1,
+    //                 2
+    //             ],
+    //             "reversePoints": false,
+    //             "category": "Escala de problemas de conducta"
+    //         },
+    //         {
+    //             "statement": "Los otros niños/as se meten con él/ella o se burlan de él/ella",
+    //             "options": [
+    //                 "No es cierto",
+    //                 "Un tanto cierto",
+    //                 "Absolutamente cierto"
+    //             ],
+    //             "points": [
+    //                 0,
+    //                 1,
+    //                 2
+    //             ],
+    //             "reversePoints": false,
+    //             "category": "Escala de problemas con compañeros/as"
+    //         },
+    //         {
+    //             "statement": "A menudo se ofrece para ayudar (a padres, maestros, otros niños/as)",
+    //             "options": [
+    //                 "No es cierto",
+    //                 "Un tanto cierto",
+    //                 "Absolutamente cierto"
+    //             ],
+    //             "points": [
+    //                 0,
+    //                 1,
+    //                 2
+    //             ],
+    //             "reversePoints": false,
+    //             "category": "Escala prosocial"
+    //         },
+    //         {
+    //             "statement": "Piensa las cosas antes de hacerlas",
+    //             "options": [
+    //                 "No es cierto",
+    //                 "Un tanto cierto",
+    //                 "Absolutamente cierto"
+    //             ],
+    //             "points": [
+    //                 0,
+    //                 1,
+    //                 2
+    //             ],
+    //             "reversePoints": true,
+    //             "category": "Escala de hiperactividad"
+    //         },
+    //         {
+    //             "statement": "Roba cosas en casa, en la escuela o en otros sitiosz",
+    //             "options": [
+    //                 "No es cierto",
+    //                 "Un tanto cierto",
+    //                 "Absolutamente cierto"
+    //             ],
+    //             "points": [
+    //                 0,
+    //                 1,
+    //                 2
+    //             ],
+    //             "reversePoints": false,
+    //             "category": "Escala de problemas de conducta"
+    //         },
+    //         {
+    //             "statement": "Se lleva mejor con adultos que con otros niños/as",
+    //             "options": [
+    //                 "No es cierto",
+    //                 "Un tanto cierto",
+    //                 "Absolutamente cierto"
+    //             ],
+    //             "points": [
+    //                 0,
+    //                 1,
+    //                 2
+    //             ],
+    //             "reversePoints": false,
+    //             "category": "Escala de problemas con compañeros/as"
+    //         },
+    //         {
+    //             "statement": "Tiene muchos miedos, se asusta fácilmente",
+    //             "options": [
+    //                 "No es cierto",
+    //                 "Un tanto cierto",
+    //                 "Absolutamente cierto"
+    //             ],
+    //             "points": [
+    //                 0,
+    //                 1,
+    //                 2
+    //             ],
+    //             "reversePoints": false,
+    //             "category": "Escala de síntomas emocionales"
+    //         },
+    //         {
+    //             "statement": "Termina lo que empieza, tiene buena concentración",
+    //             "options": [
+    //                 "No es cierto",
+    //                 "Un tanto cierto",
+    //                 "Absolutamente cierto"
+    //             ],
+    //             "points": [
+    //                 0,
+    //                 1,
+    //                 2
+    //             ],
+    //             "reversePoints": true,
+    //             "category": "Escala de hiperactividad"
+    //         }/////////////////////////////////
+    //     ]
+    // },
     {
         "testId": "2", 
         "testName": "Inventario de Depresión de Beck II", 
@@ -1486,8 +1486,94 @@ export const questionsData = [
                 "points": [0, 1, 2, 3]
               }
         ]
-          
-        
+    },
+    {
+        "testId": "10", 
+        "testName": "Cuestionario de Trastornos del humor", 
+        "instructions": "Responda cada una de las preguntas lo mejor que pueda.",
+        "questions": 
+        [
+            {
+                "statement": "¿Ha tenido alguna vez algún periodo de tiempo en el que no se sintiera usted mismo y: se sintiera tan bien o tan activo que otras personas han pensado que no estaba en su estado normal o que estaba tan hiperactivo que tenía problemas?",
+                "options": ["Sí", "No"],
+                "points": [1, 0]
+            },
+            {
+                "statement": "¿Ha tenido alguna vez algún periodo de tiempo en el que no se sintiera usted mismo y: estaba tan irritable que gritaba a la gente o se metía en peleas o discusiones?",
+                "options": ["Sí", "No"],
+                "points": [1, 0]
+            },
+            {
+                "statement": "¿Ha tenido alguna vez algún periodo de tiempo en el que no se sintiera usted mismo y: se sentía mucho más seguro que normalmente?",
+                "options": ["Sí", "No"],
+                "points": [1, 0]
+            },
+            {
+                "statement": "¿Ha tenido alguna vez algún periodo de tiempo en el que no se sintiera usted mismo y: dormía mucho menos de lo habitual y creía que realmente no era importante?",
+                "options": ["Sí", "No"],
+                "points": [1, 0]
+            },
+            {
+                "statement": "¿Ha tenido alguna vez algún periodo de tiempo en el que no se sintiera usted mismo y: estaba más hablador y hablaba mucho más rápido de lo habitual?",
+                "options": ["Sí", "No"],
+                "points": [1, 0]
+            },
+            {
+                "statement": "¿Ha tenido alguna vez algún periodo de tiempo en el que no se sintiera usted mismo y: sus pensamientos iban más rápidos en su cabeza y no podía frenar su mente?",
+                "options": ["Sí", "No"],
+                "points": [1, 0]
+            },
+            {
+                "statement": "¿Ha tenido alguna vez algún periodo de tiempo en el que no se sintiera usted mismo y: se distraía fácilmente por las cosas del alrededor o ha tenido problemas para concentrarse en lo que estaba haciendo o seguir el hilo?",
+                "options": ["Sí", "No"],
+                "points": [1, 0]
+            },
+            {
+                "statement": "¿Ha tenido alguna vez algún periodo de tiempo en el que no se sintiera usted mismo y: tenía mucha más energía de lo habitual?",
+                "options": ["Sí", "No"],
+                "points": [1, 0]
+            },
+            {
+                "statement": "¿Ha tenido alguna vez algún periodo de tiempo en el que no se sintiera usted mismo y: estaba mucho más activo o hacía muchas más cosas de lo habitual?",
+                "options": ["Sí", "No"],
+                "points": [1, 0]
+            },
+            {
+                "statement": "¿Ha tenido alguna vez algún periodo de tiempo en el que no se sintiera usted mismo y: era mucho más social o extrovertido de lo habitual, por ejemplo, llamaba a la gente a altas horas de la noche?",
+                "options": ["Sí", "No"],
+                "points": [1, 0]
+            },
+            {
+                "statement": "¿Ha tenido alguna vez algún periodo de tiempo en el que no se sintiera usted mismo y: tenía mucho más interés en el sexo de lo habitual?",
+                "options": ["Sí", "No"],
+                "points": [1, 0]
+            },
+            {
+                "statement": "¿Ha tenido alguna vez algún periodo de tiempo en el que no se sintiera usted mismo y: hizo cosas que eran inusuales para usted o que otras personas pudieran pensar que eran excesivas, estúpidas o arriesgadas?",
+                "options": ["Sí", "No"],
+                "points": [1, 0]
+            },
+            {
+                "statement": "¿Ha tenido alguna vez algún periodo de tiempo en el que no se sintiera usted mismo y: ha gastado dinero que le trajera problemas a usted o a su familiar?",
+                "options": ["Sí", "No"],
+                "points": [1, 0]
+            },
+            {
+                "statement": "Si ha respondido que SÍ a más de una de las preguntas anteriores, ¿Han ocurrido estos varios de estos problemas durante el mismo periodo de tiempo?",
+                "options": ["Sin problema", "Pequeño", "Moderado", "Serio"],
+                "points": [0, 1, 2, 3]
+            },
+            {
+                "statement": "¿Ha tenido alguno de sus parientes (p. eje., hijos, hermanos, padres, abuelos, tías, tíos) una enfermedad de tipo maníaco-depresivo o trastorno bipolar?",	
+                "options": ["Sí", "No"],
+                "points": [1, 0]
+            },
+            {
+                "statement": "Le ha dicho alguna vez un profesional de la salud que usted tiene una enfermedad maníaco-depresiva o trastorno bipolar?",	
+                "options": ["Sí", "No"],
+                "points": [1, 0]
+            },
+        ]
     }
     
 ]
