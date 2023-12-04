@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser';
 export const sendEmailResults = (results, resetAppCallback) => {
     const templateParams = {
       testName2: 'Inventario de Depresión de Beck II',
-      testScore2: results['2'],
+      testScore2: typeof results['2'] === 'object' ? JSON.stringify(results['2']) : results['2'],
       testName3: 'Inventario de Ansiedad de Beck',
       testScore3: results['3'],
       testName4: 'Tamizaje de probióticos',

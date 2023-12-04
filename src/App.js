@@ -207,7 +207,7 @@ const handleSubmit = (e) => {
           edadActual: age.years,
           edadCronologica: ageString,
       };
-
+      
       setFormValues(updatedFormValues);
       addResult("formulario", updatedFormValues);
       setFormCompleted(true);

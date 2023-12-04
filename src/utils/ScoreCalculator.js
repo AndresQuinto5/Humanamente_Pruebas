@@ -20,6 +20,39 @@
     return scores.reduce((a, b) => a + b, 0);
   };
   
+  const calculateSumOfScoresWithItem9Description = (scores) => {
+    // Calcula la suma total de los puntajes
+    const totalScore = scores.reduce((a, b) => a + b, 0);
+  
+    // Obtiene el puntaje para el ítem número 9 (índice 8 en el array)
+    const item9Score = scores[8];
+    let item9Description;
+  
+    // Asigna una descripción basada en el puntaje del ítem 9
+    switch(item9Score) {
+      case 0:
+        item9Description = "No tengo ningún pensamiento de matarme";
+        break;
+      case 1:
+        item9Description = "He tenido pensamientos de matarme, pero no lo haría";
+        break;
+      case 2:
+        item9Description = "Querría matarme";
+        break;
+      case 3:
+        item9Description = "Me mataría si tuviera la oportunidad de hacerlo";
+        break;
+      default:
+        item9Description = "Respuesta no válida para el ítem 9";
+    }
+  
+    // Retorna un objeto con el puntaje total y la descripción del ítem 9
+    return {
+      totalScore,
+      item9Description
+    };
+  };
+
   // Función para la Escala de Desesperanza de Beck
   const calculateBeckDesesperanza = (scores) => {
     const scoreIndexes = {
@@ -91,6 +124,7 @@
       // case "1":
       //   return calculateSDQ_CAS(scores, questions);
       case "2":
+        return calculateSumOfScoresWithItem9Description(scores);
       case "3":
       case "4":
       case "5":
