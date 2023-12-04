@@ -1,19 +1,22 @@
 .App {
+  text-align: center; /* Esto centrará el texto y cualquier elemento inline, como imágenes, pero no los bloques */
+  min-height: 100vh;
+}
+
+/* Añade esta clase en tu archivo CSS */
+.form-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; /* Alinea los elementos en una columna */
   min-height: 100vh;
-  /* Otros estilos... */
 }
+
 
 form {
   width: 100%; /* O el ancho máximo que desees para tu formulario */
   max-width: 400px; /* Un ancho máximo para que no se vea muy ancho en pantallas grandes */
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave para darle un aspecto elevado */
+  margin: auto; /* Esto centrará tu formulario en el contenedor .form-wrapper */
+  /* Resto de tus estilos para form */
 }
 
 .App-logo {
@@ -75,13 +78,14 @@ form {
   }
 }
 
-/* Path: PruebasHumanamente/my-psychometric-test/src/App.css */
+/* Esto es para posicionar los botones de las pruebas en la parte superior */
 .test-buttons-container {
-  display: flex; /* Utiliza Flexbox para alinear los botones */
-  gap: 10px; /* Espacio entre los botones */
-  justify-content: center; /* Centra los botones horizontalmente */
-  flex-wrap: wrap; /* Permite que los botones se ajusten al tamaño de la pantalla */
-  margin-bottom: 30px; /* Espacio debajo de la barra de botones */
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  margin-top: 20px; /* Añade espacio arriba si es necesario */
 }
 
 .test-button {
@@ -156,4 +160,93 @@ form {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+.test-title {
+  text-align: center; /* Centra el texto del título */
+  margin-top: 20px; /* Añade un margen superior si es necesario */
+  font-size: 1rem; /* Ajusta el tamaño de la fuente como prefieras */
+}
+
+
+.send-icon {
+  display: inline-block;
+  transition: transform 0.3s;
+  margin-right: 10px;
+}
+
+/* Nueva animación para el ícono de enviar */
+@keyframes fly-out {
+  to {
+    transform: translateX(500%) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Estilos para el mensaje de confirmación */
+#confirmation-message {
+  margin-top: 20px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 1.2rem;
+}
+
+/* Mostrar el mensaje de confirmación después de enviar */
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 350px; /* Controla el ancho máximo de la tarjeta */
+  margin: auto; /* Centra la tarjeta horizontalmente y verticalmente */
+  text-align: center;
+  /* Ajusta la altura mínima y máxima según sea necesario */
+  min-height: 100px; /* Altura mínima más pequeña */
+  max-height: 80%; /* Asegúrate de que no exceda el 80% de la altura de la pantalla */
+  display: flex; /* Usa flexbox para alinear el contenido */
+  flex-direction: column; /* Alinea el contenido en columna */
+  justify-content: center; /* Centra el contenido verticalmente */
+}
+.send-results-container {
+  display: flex;
+  justify-content: center; /* Alinear verticalmente al centro */
+  align-items: center; /* Alinear horizontalmente al centro */
+  height: 100vh; /* Ocupa toda la altura de la ventana gráfica */
+  padding: 20px; /* Añade algo de espacio alrededor para evitar que toque los bordes */
+}
+
+.send-results-message {
+  font-size: 1.1rem; /* Tamaño de fuente similar al de las preguntas */
+  color: #333; /* Color de fuente oscuro para coincidir con tus preguntas */
+  margin-bottom: 20px; /* Espaciado inferior para separar del botón */
+  /* No se necesita margin-top debido a flexbox y justify-content */
+}
+
+.send-button {
+  background-color: #004466; /* Ajusta el color según tu tema */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 20px; /* Espaciado superior para separar del mensaje */
+  /* No se necesita margin-bottom debido a flexbox y justify-content */
+}
+
+.send-icon {
+  margin-right: 10px;
+}
+.send-button:disabled {
+  background-color: #28a745; /* Gris para botones deshabilitados */
+}
+
+/* Ajustes para el mensaje de confirmación */
+#confirmation-message {
+  font-size: 1rem; /* Ajusta esto según necesites */
+  color: #28a745; /* O el color que prefieras para el mensaje de éxito */
+  margin-top: 20px;
+}
+
+.button-sent {
+  background-color: #28a745; /* Verde */
 }

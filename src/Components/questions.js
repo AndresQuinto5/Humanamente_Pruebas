@@ -618,7 +618,7 @@ export const questionsData = [
     },
     {
         "testId": "3", 
-        "testName": "BAI", 
+        "testName": "Inventario de Ansiedad de Beck", 
         "instructions": "A continuación se presentan una lista de síntomas comunes de la ansiedad. Indique cuánto le han molestado estos síntomas durante la última semana (incluyendo hoy)." ,
         "questions": 
         [
@@ -1204,7 +1204,7 @@ export const questionsData = [
     // },
     {
         "testId": "8",
-        "testName": "Desesperanza de BECK",
+        "testName": "Inventario de desesperanza de BECK",
         "instructions": "A continuación se presenta una serie de afirmaciones. Por favor, lea cada una y responda si para usted es Verdadero o Falso.",
         "questions": [
             {
@@ -1372,7 +1372,7 @@ export const questionsData = [
     {
         "testId": "9", 
         "testName": "Cuestionario Salamanca de Trastornos de la Personalidad", 
-        "instructions": "Este es un cuestionario para la valoración de algunos de sus rasgos de personalidad. Conteste según sea su manera de ser habitual y no según se encuentre en un momento dado. Donde la intensidad de su respuesta significa: 0: No estoy de acuerdo; 1: A veces; 2: Con frecuencia, y 3: Siempre.",
+        "instructions": "Este es un cuestionario para la valoración de algunos de sus rasgos de personalidad. Conteste según sea su manera de ser habitual y no según se encuentre en un momento dado.",
         "questions": 
         [
             {
@@ -1560,6 +1560,11 @@ export const questionsData = [
             },
             {
                 "statement": "Si ha respondido que SÍ a más de una de las preguntas anteriores, ¿Han ocurrido estos varios de estos problemas durante el mismo periodo de tiempo?",
+                "options": ["Sí", "No"],
+                "points": [1, 0]
+            },
+            {
+                "statement": "¿Cuánto problema le han causado alguna de estas cosas: en el trabajo; problemas con la familia, el dinero o legales; metiéndose en peleas o discusiones? (Si no ha tenido ningún problema, marque 0)",
                 "options": ["Sin problema", "Pequeño", "Moderado", "Serio"],
                 "points": [0, 1, 2, 3]
             },

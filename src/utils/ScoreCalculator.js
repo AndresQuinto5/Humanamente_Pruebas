@@ -77,11 +77,12 @@
 
     // Obtener respuestas a las preguntas restantes
     const additionalResponses = {
-      q14: scores[13],
-      q15: scores[14],
-      q16: scores[15]
+      Item2: scores[13],
+      Item3: scores[14],
+      Item4: scores[15],
+      Item5: scores[16],
     };
-
+    console.log(sumFirst13, additionalResponses);
     return { sumFirst13, ...additionalResponses };
   };
   // Función principal que maneja el cálculo de puntuaciones basado en el testId

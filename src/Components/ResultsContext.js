@@ -17,7 +17,7 @@ export const ResultsProvider = ({ children }) => {
   };
 
   return (
-    <ResultsContext.Provider value={{ results, addResult }}>
+    <ResultsContext.Provider value={{ results, addResult, setResults  }}>
       {children}
     </ResultsContext.Provider>
   );
